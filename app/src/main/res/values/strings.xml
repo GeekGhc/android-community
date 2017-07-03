@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Community</string>
+
+    <string name="user_like">我喜欢的</string>
+    <string name="user_collect">我的收藏</string>
+    <string name="user_articles">我的文章</string>
+    <string name="user_posts">我的帖子</string>
+    <string name="user_followers">关注我的</string>
+    <string name="user_following">我关注的</string>
+    <string name="user_advise">意见反馈</string>
+    <string name="setting">设置</string>
+</resources>
