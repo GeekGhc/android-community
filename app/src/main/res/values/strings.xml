@@ -8,6 +8,9 @@
     <string name="user_followers">关注我的</string>
     <string name="user_following">我关注的</string>
     <string name="user_advise">意见反馈</string>
+    <string name="profile">个人主页</string>
+    <string name="me">我</string>
+    <string name="message">消息</string>
     <string name="setting">设置</string>
 
     <string name="phone">手机</string>
@@ -20,4 +23,8 @@
     <string name="clear_cache">清理缓存</string>
     <string name="notification">消息通知</string>
     <string name="user_logout">退出账号</string>
+
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

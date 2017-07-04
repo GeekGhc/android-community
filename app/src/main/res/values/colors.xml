@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#eff2f7</color>
+    <color name="windowBackground">#f2f2f2</color><!--window的背景样式-->
 
     <color name="bottom_shadow">#6e000000</color>
     <color name="user_logout">#DB2828</color>
@@ -15,4 +16,12 @@
     <color name="color_black_02">#222</color>
     <color name="color_black_03">#333</color>
     <color name="color_red">#F00</color>
+
+    <color name="topbar_bg">#FFFFFF</color><!--顶部Bar的背景样式-->
+    <color name="topbar_center">#545454</color><!--顶部Bar字体颜色-->
+    <color name="home_bottombar_bg">#FFFFFF</color><!--底部bar的背景样式-->
+    <color name="home_bottombar_font">#929292</color><!--底部bar字体颜色-->
+    <color name="home_bottombar_topdrive">#eaeaea</color>
+
+    <color name="black_overlay">#66000000</color><!--顶部分割线的颜色-->
 </resources>
