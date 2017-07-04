@@ -9,4 +9,15 @@
     <string name="user_following">我关注的</string>
     <string name="user_advise">意见反馈</string>
     <string name="setting">设置</string>
+
+    <string name="phone">手机</string>
+    <string name="email">邮箱</string>
+    <string name="bind_weibo">绑定微博</string>
+    <string name="bind_github">绑定Github</string>
+    <string name="bind_qq">绑定QQ</string>
+    <string name="edit_password">修改账户密码</string>
+
+    <string name="clear_cache">清理缓存</string>
+    <string name="notification">消息通知</string>
+    <string name="user_logout">退出账号</string>
 </resources>
