@@ -22,6 +22,9 @@
     <color name="home_bottombar_bg">#FFFFFF</color><!--底部bar的背景样式-->
     <color name="home_bottombar_font">#929292</color><!--底部bar字体颜色-->
     <color name="home_bottombar_topdrive">#eaeaea</color>
+    <color name="searchHeadView_toolbar_bg">#E3E4E6</color><!--发现页的toolbar的收缩栏-->
+    <color name="searchHeadView_inner_bg">#FFFFFF</color><!--普通背景颜色-->
+    <color name="topbar_bottom_drive">#e3e3e3</color><!--顶部Bar的底部分割线-->
 
     <color name="black_overlay">#66000000</color><!--顶部分割线的颜色-->
 </resources>

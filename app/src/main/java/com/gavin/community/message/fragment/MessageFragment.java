@@ -2,9 +2,9 @@ package com.gavin.community.message.fragment;
 
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +21,7 @@ public class MessageFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragement_profile, container, false);
+        mView = inflater.inflate(R.layout.message_layout, container, false);
         mActivity = getActivity();
 //        mContext = getContext();
         return mView;
