@@ -49,6 +49,98 @@
 
     </android.support.v7.widget.CardView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/yyweibo_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/message_item_auto"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/profile_statuses_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/rl_textcolor"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="帖子"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/friends_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/message_item_auto"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/profile_friends_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/rl_textcolor"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/followers_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/message_item_auto"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/profile_followers_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/rl_textcolor"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="粉丝"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +148,7 @@
         android:background="#fff"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -85,7 +177,7 @@
                     android:layout_weight="1"
                     android:text="@string/user_like"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
+                    android:textColor="@color/setting_black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -104,55 +196,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_marginTop="1sp"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="2dp">
-
-        <LinearLayout
-            android:id="@+id/user_posts_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_user_posts"
-                    android:layout_marginRight="10dp"
-                    />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/user_posts"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/user_panel_color"
-                    android:text="18篇"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="1sp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -179,7 +223,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
+                    android:textColor="@color/setting_black"
                     android:text="@string/user_articles" />
 
                <TextView
@@ -198,7 +242,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_marginTop="1sp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -216,7 +260,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_user_followers"
+                    android:src="@mipmap/ic_tag_red"
                     android:layout_marginRight="10dp"
                     />
 
@@ -225,9 +269,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/user_followers"
+                    android:text="@string/tag_manager"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
+                    android:textColor="@color/setting_black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -246,7 +290,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_marginTop="1sp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -263,7 +307,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_user_following"
+                    android:src="@mipmap/ic_eyes_orange"
                     android:layout_marginRight="10dp"
                     />
                 <TextView
@@ -272,8 +316,8 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
-                    android:text="@string/user_following" />
+                    android:textColor="@color/setting_black"
+                    android:text="@string/read_articles" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -291,7 +335,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_marginTop="18dp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -317,7 +361,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
+                    android:textColor="@color/setting_black"
                     android:text="@string/user_advise" />
                     />
             </LinearLayout>
@@ -329,7 +373,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_marginTop="1sp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -357,7 +401,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:layout_marginLeft="6dp"
-                    android:textColor="@color/color_black_03"
+                    android:textColor="@color/setting_black"
                     android:text="@string/setting" />
                 />
             </LinearLayout>

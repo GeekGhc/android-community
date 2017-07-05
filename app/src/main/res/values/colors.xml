@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#007fff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#eff2f7</color>
@@ -11,10 +11,16 @@
     <color name="toast_bg">#dddfe0</color>
     <color name="user_panel_color">#abb8c2</color>
 
+    <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="orange">#FFA500</color><!--橙色 -->
+    <color name="grey">#f2f2f2</color><!--灰色 -->
+    <color name="gray">#808080</color><!--灰色 -->
+    <color name="red">#FF0000</color><!--红色 -->
     <color name="color_black">#000</color>
     <color name="color_black_01">#111</color>
     <color name="color_black_02">#222</color>
     <color name="color_black_03">#333</color>
+    <color name="setting_black">#24292e</color>
     <color name="color_red">#F00</color>
 
     <color name="topbar_bg">#FFFFFF</color><!--顶部Bar的背景样式-->
@@ -25,6 +31,12 @@
     <color name="searchHeadView_toolbar_bg">#E3E4E6</color><!--发现页的toolbar的收缩栏-->
     <color name="searchHeadView_inner_bg">#FFFFFF</color><!--普通背景颜色-->
     <color name="topbar_bottom_drive">#e3e3e3</color><!--顶部Bar的底部分割线-->
+    <color name="topbar_center_highlight_bg">#e7e7e7</color><!--顶部Bar的分组的按压颜色-->
 
     <color name="black_overlay">#66000000</color><!--顶部分割线的颜色-->
+
+    <!--按钮栏-白天 -->
+    <color name="rl_normal_bg">#FFFFFF</color><!--状态栏的的背景颜色-->
+    <color name="rl_highlight_bg">#f2f2f2</color><!--状态栏的的背景颜色-->
+    <color name="rl_textcolor">#111111</color>
 </resources>

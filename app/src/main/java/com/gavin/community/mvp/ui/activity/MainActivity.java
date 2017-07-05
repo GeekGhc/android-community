@@ -1,11 +1,13 @@
 package com.gavin.community.mvp.ui.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,6 +23,7 @@ import com.gavin.community.myself.fragment.MySelfFragment;
 
 public class MainActivity extends BaseAppCompatActivity {
 
+    //底部选项栏
     private static final String TAB_HOME_FRAGMENT = "home";
     private static final String TAB_MESSAGE_FRAGMENT = "message";
     private static final String TAB_DISCOVERY_FRAGMENT = "discovery";
@@ -148,7 +151,7 @@ public class MainActivity extends BaseAppCompatActivity {
      */
     private void showHomeFragment() {
         mHomeTabRl.setSelected(true);
-        if (mHomeFragment == null) {    
+        if (mHomeFragment == null) {
             mHomeFragment = new HomeFragment();
             mTransaction.add(R.id.main_content_fl, mHomeFragment, TAB_HOME_FRAGMENT);
         } else {
@@ -265,6 +268,35 @@ public class MainActivity extends BaseAppCompatActivity {
         mDiscoverTabRl.setSelected(false);
         mMySelfTabRl.setSelected(false);
     }
+
+    /**
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (mHomeFragment != null) {
+            mHomeFragment.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    /**
+     * 监听返回按钮
+     *
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == android.view.KeyEvent.KEYCODE_BACK) {
+            showExitDialog();
+        }
+        return false;
+    }
+
 
     /**
      * 如果fragment因为内存不够或者其他原因被销毁掉，在这个方法中执行恢复操作
