@@ -31,7 +31,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/compose_idea"
+                android:id="@+id/compose_post"
                 android:layout_width="71dp"
                 android:layout_height="71dp"
                 android:src="@drawable/tabbar_compose_idea" />
@@ -75,7 +75,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/compose_headlines"
+                android:id="@+id/compose_articles"
                 android:layout_width="71dp"
                 android:layout_height="71dp"
                 android:src="@drawable/tabbar_compose_headlines" />

@@ -17,6 +17,7 @@ import com.gavin.community.R;
 import com.gavin.community.common.BarManager;
 import com.gavin.community.common.base.BaseAppCompatActivity;
 import com.gavin.community.discover.fragment.DiscoverFragment;
+import com.gavin.community.home.post.fragment.PostSwipeActivity;
 import com.gavin.community.message.fragment.MessageFragment;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
 import com.gavin.community.myself.fragment.MySelfFragment;
@@ -60,7 +61,8 @@ public class MainActivity extends BaseAppCompatActivity {
             restoreFragment(savedInstanceState);
         } else {
             setTabFragment(TAB_HOME_FRAGMENT);
-        }    }
+        }
+    }
 
     //初始化数据
     private void initData()
@@ -91,13 +93,19 @@ public class MainActivity extends BaseAppCompatActivity {
                 setTabFragment(TAB_MESSAGE_FRAGMENT);
             }
         });
+        mPostTabIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PostSwipeActivity.class);
+                startActivity(intent);
+            }
+        });
         mDiscoverTabRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setTabFragment(TAB_DISCOVERY_FRAGMENT);
             }
         });
-
         mMySelfTabRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
