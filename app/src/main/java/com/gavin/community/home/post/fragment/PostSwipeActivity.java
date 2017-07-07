@@ -25,12 +25,29 @@ public class PostSwipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.postfragment_layout);
 
+        prepareView();
+        initData();
+        initListener();
+    }
+
+    private void  initData()
+    {
+
+    }
+
+    //视图准备
+    private void prepareView() {
         composePost = (ImageView) findViewById(R.id.compose_post);
         composePhoto = (ImageView) findViewById(R.id.compose_photo);
         composeArticle = (ImageView) findViewById(R.id.compose_articles);
         composeLbs = (ImageView) findViewById(R.id.compose_lbs);
         composeReview = (ImageView) findViewById(R.id.compose_review);
         composeMore = (ImageView) findViewById(R.id.compose_more);
+        composeClose = (ImageView)findViewById(R.id.compose_close);
+    }
+
+    //初始化监听器
+    protected void initListener(){
         composeClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

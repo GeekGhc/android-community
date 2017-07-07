@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,406 +7,429 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:background="#fff"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="2dp">
+    <include layout="@layout/toolbar_me" />
 
-        <LinearLayout
-            android:id="@+id/user_activity"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="45dp"
+        android:layout_weight="1">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/profile_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="18dp">
+                android:layout_marginTop="18dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/profile_activity"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:text="GeekGhc"
-                    android:textSize="24sp" />
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_action_right"
-                    android:layout_marginLeft="4dp"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="18dp">
 
-    </android.support.v7.widget.CardView>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="GeekGhc"
+                            android:textSize="24sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:src="@mipmap/ic_action_right" />
+                    </LinearLayout>
+                </LinearLayout>
 
-        android:background="@color/white">
-
-        <LinearLayout
-            android:id="@+id/yyweibo_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/message_item_auto"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
-
-            <TextView
-                android:id="@+id/profile_statuses_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/rl_textcolor"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="帖子"
-                android:textColor="@color/gray"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/friends_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/message_item_auto"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
-
-            <TextView
-                android:id="@+id/profile_friends_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/rl_textcolor"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="关注"
-                android:textColor="@color/gray"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/followers_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/message_item_auto"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
-
-            <TextView
-                android:id="@+id/profile_followers_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/rl_textcolor"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="粉丝"
-                android:textColor="@color/gray"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:background="#fff"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
-
-        <LinearLayout
-            android:id="@+id/user_like_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            </android.support.v7.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
 
-                <ImageView
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/yyweibo_layout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_user_like" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/user_like"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:textSize="18sp" />
+                    android:background="@drawable/message_item_auto"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/profile_statuses_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/rl_textcolor"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="帖子"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/friends_layout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12篇"
-                    android:textColor="@color/user_panel_color"
-                    android:textSize="16sp" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/message_item_auto"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/profile_friends_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/rl_textcolor"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关注"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/followers_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/message_item_auto"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/profile_followers_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/rl_textcolor"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="粉丝"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="1sp"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
-
-        <LinearLayout
-            android:id="@+id/user_article_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:layout_marginTop="18dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/user_like_activity"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_user_articles"
-                    android:layout_marginRight="10dp"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:text="@string/user_articles" />
+                    android:orientation="vertical">
 
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textSize="16sp"
-                   android:textColor="@color/user_panel_color"
-                   android:text="24篇"
-                   />
-            </LinearLayout>
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="1sp"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_user_like" />
 
-        <LinearLayout
-            android:id="@+id/user_followers_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/user_like"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12篇"
+                            android:textColor="@color/user_panel_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:layout_marginTop="1sp"
+                android:background="#fff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/user_article_activity"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_tag_red"
-                    android:layout_marginRight="10dp"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/tag_manager"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/user_panel_color"
-                    android:text="36个"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_user_articles" />
 
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="1sp"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/user_articles"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
 
-        <LinearLayout
-            android:id="@+id/user_following_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="24篇"
+                            android:textColor="@color/user_panel_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_eyes_orange"
-                    android:layout_marginRight="10dp"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:text="@string/read_articles" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/user_panel_color"
-                    android:text="22个"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                android:layout_marginTop="1sp"
+                android:background="#fff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
-    </android.support.v7.widget.CardView>
+                <LinearLayout
+                    android:id="@+id/user_followers_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="18dp"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
-        <LinearLayout
-            android:id="@+id/user_advise_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_tag_red" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/tag_manager"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="36个"
+                            android:textColor="@color/user_panel_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_user_advise"
-                    android:layout_marginRight="10dp"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:text="@string/user_advise" />
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                android:layout_marginTop="1sp"
+                android:background="#fff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="1sp"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="2dp">
+                <LinearLayout
+                    android:id="@+id/user_following_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/user_setting_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_eyes_orange" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/read_articles"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="22个"
+                            android:textColor="@color/user_panel_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:layout_marginTop="18dp"
+                android:background="#fff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/user_advise_activity"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_setting"
-                    android:layout_marginRight="10dp"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_user_advise" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/user_advise"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
+                        />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1sp"
+                android:background="#fff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/setting_activity"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/setting_black"
-                    android:text="@string/setting" />
-                />
-            </LinearLayout>
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_setting" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/setting"
+                            android:textColor="@color/setting_black"
+                            android:textSize="18sp" />
+                        />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-
-    </android.support.v7.widget.CardView>
+    </ScrollView>
 
 </LinearLayout>

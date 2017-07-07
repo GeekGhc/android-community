@@ -60,7 +60,7 @@
                 android:id="@+id/myweibo_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的粉丝"
+                android:text="我关注的"
                 android:textColor="@color/topbar_center"
                 android:textSize="20sp" />
 

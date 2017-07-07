@@ -7,6 +7,7 @@
     android:background="@color/topbar_bg">
 
     <ImageView
+        android:id="@+id/toolbar_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_action_left"

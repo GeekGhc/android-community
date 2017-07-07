@@ -7,6 +7,8 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
+   <include layout="@layout/toolbar_setting"/>
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,6 +82,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:gravity="right"
+                    android:textColor="@color/common_text"
                     android:text="gehuachun@outlook.com" />
                 <ImageView
                     android:layout_width="wrap_content"
@@ -163,6 +166,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:gravity="right"
+                    android:textColor="@color/common_text"
                     android:text="Jenny葛" />
 
             </LinearLayout>
@@ -203,6 +207,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:gravity="right"
+                    android:textColor="@color/common_text"
                     android:text="已关闭" />
 
                 <ImageView
@@ -250,6 +255,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:gravity="right"
+                    android:textColor="@color/common_text"
                     android:text="32.4Mb" />
 
                 <ImageView
@@ -296,6 +302,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:gravity="right"
+                    android:textColor="@color/common_text"
                     android:text="已关闭" />
 
                 <ImageView
@@ -324,6 +331,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
+                android:id="@+id/exitLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"

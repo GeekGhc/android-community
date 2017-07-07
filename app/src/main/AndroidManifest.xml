@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".mvp.ui.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +21,10 @@
         <activity
             android:name=".mvp.ui.activity.WelcomeActivity"
             android:label="@string/title_activity_welcome"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
-        </activity>
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        <activity android:name=".myself.activity.SettingActivity" />
+        <activity android:name=".home.post.fragment.PostSwipeActivity" />
+        <activity android:name=".profile.activity.ProfileActivity"></activity>
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@ import retrofit2.http.Query;
  * 掘金api
  */
 
-public interface VtexApis {
+public interface VtexAPI {
 
     String HOST = "https://www.v2ex.com/";
 

@@ -11,8 +11,4 @@ public interface ProfileFragmentView {
 
     public void hideScrollView();
 
-    public void showProgressDialog();
-
-    public void hideProgressDialog();
-
 }

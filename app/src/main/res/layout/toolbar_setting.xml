@@ -6,12 +6,36 @@
     android:layout_height="45dp"
     android:background="@color/topbar_bg">
 
-    <ImageView
+    <LinearLayout
+        android:id="@+id/toolbar_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_action_left"
-        android:layout_margin="8dp"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:clickable="true"
+        >
+        <ImageView
+            android:id="@+id/toolbar_back_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:onClick="onArrorClick"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_action_left" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/me"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/toolbar_username"
