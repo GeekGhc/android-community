@@ -23,6 +23,6 @@
         android:gravity="center"
         android:text="@string/profile"
         android:textColor="@color/topbar_center"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>

@@ -17,6 +17,9 @@ import com.gavin.community.R;
 import com.gavin.community.common.entity.User;
 import com.gavin.community.mvp.view.MeFragementView;
 import com.gavin.community.myself.activity.SettingActivity;
+import com.gavin.community.myself.favorite.activity.FavoriteActivity;
+import com.gavin.community.myself.followers.activity.FollowersActivity;
+import com.gavin.community.myself.following.activity.FollowingActivity;
 import com.gavin.community.profile.activity.ProfileActivity;
 
 public class MySelfFragment extends Fragment implements MeFragementView {
@@ -26,6 +29,9 @@ public class MySelfFragment extends Fragment implements MeFragementView {
     private ScrollView mScrollView;
     private LinearLayout mSettingActivity;
     private LinearLayout mProfileActivity;
+    private LinearLayout mFollowersActivity;
+    private LinearLayout mFollowingActivity;
+    private LinearLayout mMyFavoriteActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,9 @@ public class MySelfFragment extends Fragment implements MeFragementView {
         mScrollView = (ScrollView) mView.findViewById(R.id.scrollview);
         mSettingActivity = (LinearLayout) mView.findViewById(R.id.setting_activity);
         mProfileActivity = (LinearLayout)mView.findViewById(R.id.profile_activity);
+        mFollowersActivity = (LinearLayout)mView.findViewById(R.id.followers_layout);
+        mFollowingActivity = (LinearLayout)mView.findViewById(R.id.following_layout);
+        mMyFavoriteActivity = (LinearLayout)mView.findViewById(R.id.favorite_layout);
         initData();
         initListener();
         return mView;
@@ -70,6 +79,24 @@ public class MySelfFragment extends Fragment implements MeFragementView {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ProfileActivity.class));
+            }
+        });
+        mFollowersActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FollowersActivity.class));
+            }
+        });
+        mFollowingActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FollowingActivity.class));
+            }
+        });
+        mMyFavoriteActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FavoriteActivity.class));
             }
         });
     }

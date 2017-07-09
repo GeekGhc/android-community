@@ -16,6 +16,8 @@
     <string name="message">消息</string>
     <string name="setting">设置</string>
 
+    <string name="my_post">我的帖子</string>
+
     <string name="phone">手机</string>
     <string name="email">邮箱</string>
     <string name="bind_weibo">绑定微博</string>

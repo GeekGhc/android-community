@@ -24,7 +24,10 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity android:name=".myself.activity.SettingActivity" />
         <activity android:name=".home.post.fragment.PostSwipeActivity" />
-        <activity android:name=".profile.activity.ProfileActivity"></activity>
+        <activity android:name=".profile.activity.ProfileActivity" />
+        <activity android:name=".myself.followers.activity.FollowersActivity" />
+        <activity android:name=".myself.following.activity.FollowingActivity" />
+        <activity android:name=".myself.favorite.activity.FavoriteActivity"></activity>
     </application>
 
 </manifest>
