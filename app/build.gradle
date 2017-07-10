@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 25
@@ -77,6 +78,9 @@ dependencies {
     compile rootProject.ext.dependencies["butterknife"]
     apt rootProject.ext.dependencies["butterknife-compiler"]
     provided rootProject.ext.dependencies["annotation"]
+
+    //other
+    compile rootProject.ext.dependencies["fragmentation"]
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'

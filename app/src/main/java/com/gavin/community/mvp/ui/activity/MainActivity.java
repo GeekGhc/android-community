@@ -2,6 +2,7 @@ package com.gavin.community.mvp.ui.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -14,15 +15,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.gavin.community.R;
+import com.gavin.community.app.App;
 import com.gavin.community.common.BarManager;
 import com.gavin.community.common.base.BaseAppCompatActivity;
+import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.discover.fragment.DiscoverFragment;
 import com.gavin.community.home.post.fragment.PostSwipeActivity;
 import com.gavin.community.message.fragment.MessageFragment;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
 import com.gavin.community.myself.fragment.MySelfFragment;
 
-public class MainActivity extends BaseAppCompatActivity {
+import butterknife.ButterKnife;
+import me.yokeyword.fragmentation.SupportActivity;
+
+public class MainActivity extends SimpleActivity {
 
     //底部选项栏
     private static final String TAB_HOME_FRAGMENT = "home";
@@ -47,14 +53,10 @@ public class MainActivity extends BaseAppCompatActivity {
     private boolean mComeFromAccoutActivity;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        prepareView();
-        initData();
-        initView();
-        initListener();
+        setContentView(getLayout());
+        initEventAndData();
 
         //如果是从崩溃中恢复，还需要加载之前的缓存
         if (savedInstanceState != null) {
@@ -62,6 +64,20 @@ public class MainActivity extends BaseAppCompatActivity {
         } else {
             setTabFragment(TAB_HOME_FRAGMENT);
         }
+        setTabFragment(TAB_HOME_FRAGMENT);
+    }
+
+    @Override
+    protected void initEventAndData() {
+        prepareView();
+        initData();
+        initView();
+        initListener();
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_main;
     }
 
     //初始化数据
@@ -337,9 +353,11 @@ public class MainActivity extends BaseAppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setMessage("确定要退出？")
                 .setCancelable(true)
+                .setIcon(R.drawable.logo)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        App.getInstance().finishAll();
+                        finish();
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {

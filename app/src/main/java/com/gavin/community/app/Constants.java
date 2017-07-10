@@ -32,4 +32,7 @@ public class Constants {
 
     public static final int TYPE_ABOUT = 112;
 
+    public static final String IT_TYPE = "IT_type";
+    public static final String IT_MANAGER = "IT_manager";
+
 }

@@ -3,6 +3,7 @@
     package="com.gavin.community">
 
     <application
+        android:name="com.gavin.community.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -25,8 +26,8 @@
         <activity android:name=".myself.activity.SettingActivity" />
         <activity android:name=".home.post.fragment.PostSwipeActivity" />
         <activity android:name=".profile.activity.ProfileActivity" />
-        <activity android:name=".myself.followers.activity.FollowersActivity" />
-        <activity android:name=".myself.following.activity.FollowingActivity" />
+        <activity android:name=".myself.followers.activity.FollowersActivity"/>
+        <activity android:name=".myself.following.activity.FollowingActivity"/>
         <activity android:name=".myself.favorite.activity.FavoriteActivity"></activity>
     </application>
 
