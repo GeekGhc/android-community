@@ -45,7 +45,7 @@
         android:layout_margin="8dp"
         android:gravity="center"
         android:text="@string/my_post"
-        android:textColor="@color/color_black_02"
-        android:textSize="24sp" />
+        android:textColor="@color/topbar_center"
+        android:textSize="20sp" />
 
 </RelativeLayout>

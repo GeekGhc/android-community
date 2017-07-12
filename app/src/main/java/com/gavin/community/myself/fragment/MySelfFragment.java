@@ -8,19 +8,31 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.gavin.community.R;
+import com.gavin.community.app.api.UserAPI;
 import com.gavin.community.common.entity.User;
+import com.gavin.community.mvp.model.bean.TestData;
 import com.gavin.community.mvp.view.MeFragementView;
 import com.gavin.community.myself.activity.SettingActivity;
 import com.gavin.community.myself.favorite.activity.FavoriteActivity;
 import com.gavin.community.myself.followers.activity.FollowersActivity;
 import com.gavin.community.myself.following.activity.FollowingActivity;
 import com.gavin.community.profile.activity.ProfileActivity;
+import com.gavin.community.utils.ToastUtil;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class MySelfFragment extends Fragment implements MeFragementView {
     private View mView;
@@ -32,6 +44,7 @@ public class MySelfFragment extends Fragment implements MeFragementView {
     private LinearLayout mFollowersActivity;
     private LinearLayout mFollowingActivity;
     private LinearLayout mMyFavoriteActivity;
+    private LinearLayout mPostActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +63,7 @@ public class MySelfFragment extends Fragment implements MeFragementView {
         mFollowersActivity = (LinearLayout)mView.findViewById(R.id.followers_layout);
         mFollowingActivity = (LinearLayout)mView.findViewById(R.id.following_layout);
         mMyFavoriteActivity = (LinearLayout)mView.findViewById(R.id.favorite_layout);
+        mPostActivity = (LinearLayout)mView.findViewById(R.id.post_layout);
         initData();
         initListener();
         return mView;
@@ -97,6 +111,33 @@ public class MySelfFragment extends Fragment implements MeFragementView {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), FavoriteActivity.class));
+            }
+        });
+        mPostActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String url = "http://10.0.3.2:8000/api/";
+                String name = "gavin";
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(url)
+                        //增加返回值为String的支持
+                        .addConverterFactory(ScalarsConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                UserAPI userAPI = retrofit.create(UserAPI.class);
+                Call<TestData>call = userAPI.getData(name);
+                call.enqueue(new Callback<TestData>() {
+                    @Override
+                    public void onResponse(Call<TestData> call, Response<TestData> response) {
+                        String name = response.body().getName();
+                        ToastUtil.show("name = "+name);
+                    }
+                    @Override
+                    public void onFailure(Call<TestData> call, Throwable t) {
+                        ToastUtil.show("failed = "+t.toString());
+                    }
+                });
+
             }
         });
     }
