@@ -12,6 +12,8 @@
     <string name="user_advise">意见反馈</string>
     <string name="profile">个人主页</string>
     <string name="me">我</string>
+    <string name="edit_profile">修改资料</string>
+    <string name="save">保存</string>
     <string name="back">返回</string>
     <string name="message">消息</string>
     <string name="setting">设置</string>

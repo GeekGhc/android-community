@@ -21,7 +21,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
     public void onCreate() {
         super.onCreate();
         instance = this;
-        //LeakCanary.install(this);
     }
 
     public static synchronized App getInstance()

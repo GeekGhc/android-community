@@ -3,6 +3,8 @@ package com.gavin.community.common.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -21,6 +23,19 @@ public abstract class SimpleActivity extends SupportActivity {
         mUnBinder = ButterKnife.bind(this);
         mContext = this;
         initEventAndData();
+    }
+
+    protected void setToolBar(Toolbar toolbar, String title) {
+        toolbar.setTitle(title);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressedSupport();
+            }
+        });
     }
 
     @Override

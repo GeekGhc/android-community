@@ -5,12 +5,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.gavin.community.di.component.FragmentComponent;
+import com.gavin.community.di.module.FragmentModule;
+
 import javax.inject.Inject;
 
 public abstract class BaseFragment<T extends BasePresenter> extends SimpleFragment implements BaseView{
 
     @Inject
     protected T mPresenter;
+
+    protected FragmentModule getFragmentModule(){
+        return new FragmentModule(this);
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

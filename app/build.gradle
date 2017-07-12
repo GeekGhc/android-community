@@ -54,7 +54,7 @@ dependencies {
     compile rootProject.ext.dependencies["PhotoView"]
     compile rootProject.ext.dependencies["glide-transformations"]
     compile rootProject.ext.dependencies["html-textview"]
-    compile rootProject.ext.dependencies["ViewPagerIndicator"]
+    compile rootProject.ext.dependencies["CoordinatorTabLayout"]
 
     //rx
     compile rootProject.ext.dependencies["rxjava"]

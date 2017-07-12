@@ -4,7 +4,10 @@ package com.gavin.community.mvp.model.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class HomeManagerItemBean implements Parcelable {
+import io.realm.RealmObject;
+
+//类型的Bean
+public class HomeManagerItemBean extends RealmObject implements Parcelable {
 
     private int index;
     private boolean isSelect;

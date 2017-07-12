@@ -26,7 +26,6 @@ public class NetUtil {
      */
     public static boolean isConnected(Context context)
     {
-
         ConnectivityManager connectivity = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 

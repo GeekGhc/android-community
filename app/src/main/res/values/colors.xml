@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#eff2f7</color>
+    <color name="colorText">#2C2C2C</color>
     <color name="windowBackground">#f2f2f2</color><!--window的背景样式-->
 
     <color name="bottom_shadow">#6e000000</color>
@@ -11,6 +12,7 @@
     <color name="toast_bg">#dddfe0</color>
     <color name="user_panel_color">#abb8c2</color>
     <color name="common_text">#b2bac2</color>
+    <color name="comment_reply">#9ba4a3</color>
 
     <color name="white">#FFFFFF</color><!--白色 -->
     <color name="orange">#FFA500</color><!--橙色 -->
