@@ -123,7 +123,7 @@ public class MySelfFragment extends Fragment implements MeFragementView {
             @Override
             public void onClick(View v) {
 
-                String url = "http://10.0.3.2:8000/api/";
+                /*String url = "http://10.0.3.2:8000/api/";
                 String name = "geekghc";
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(url)
@@ -133,7 +133,7 @@ public class MySelfFragment extends Fragment implements MeFragementView {
                         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                         .build();
                 UserAPI userAPI = retrofit.create(UserAPI.class);
-                /*Call<TestData>call = userAPI.getData(name);
+                Call<TestData>call = userAPI.getData(name);
                 call.enqueue(new Callback<TestData>() {
                     @Override
                     public void onResponse(Call<TestData> call, Response<TestData> response) {

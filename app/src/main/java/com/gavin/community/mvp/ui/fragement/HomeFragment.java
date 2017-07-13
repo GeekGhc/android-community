@@ -28,7 +28,7 @@ public class HomeFragment extends SimpleFragment {
     @BindView(R.id.vp_gold_main)
     ViewPager mViewPager;
 
-    private ArrayList<Fragment> mFragments;
+    private ArrayList<Fragment> mFragments = new ArrayList<>();
 //    List<HomePageFragment> fragments = new ArrayList<>();
     HomeAdapter mAdapter;
     HomePageFragment androidFragment;

@@ -15,7 +15,7 @@ public class DataManager implements HttpHelper, DBHelper {
         mHttpHelper = httpHelper;
         mDbHelper = dbHelper;
     }
-    
+
     @Override
     public  boolean queryPostId(int id){
         return true;
