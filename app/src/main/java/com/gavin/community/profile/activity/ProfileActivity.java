@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.gavin.community.R;
 import com.gavin.community.common.base.SimpleActivity;
+import com.gavin.community.myself.activity.SettingActivity;
+import com.gavin.community.myself.fragment.MySelfFragment;
 import com.gavin.community.utils.ToastUtil;
 
 import butterknife.BindView;

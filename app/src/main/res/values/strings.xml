@@ -40,6 +40,9 @@
     <string name="reset_password">重置密码</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="error_tips">糟糕！加载失败了ヽ(≧Д≦)ノ\n 可能的原因：\n1.惨不忍睹的网络环境\n 2.服务器的不定期抽风\n 3.微社区现在心情不好拒绝服务喔~</string>
+
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

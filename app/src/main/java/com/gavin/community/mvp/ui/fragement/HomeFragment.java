@@ -1,6 +1,7 @@
 package com.gavin.community.mvp.ui.fragement;
 
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,15 +9,17 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.gavin.community.R;
+import com.gavin.community.app.Constants;
 import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.common.base.SimpleFragment;
+import com.gavin.community.mvp.adapter.HomeAdapter;
+import com.gavin.community.mvp.adapter.HomePageAdapter;
 import com.gavin.community.mvp.adapter.MyPagerAdapter;
 import com.gavin.community.utils.LogUtil;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 
 public class HomeFragment extends SimpleFragment {
 
@@ -24,15 +27,16 @@ public class HomeFragment extends SimpleFragment {
     TabLayout mTabLayout;
     @BindView(R.id.vp_gold_main)
     ViewPager mViewPager;
-   /* @BindView(R.id.coordinatortablayout)
-    CoordinatorTabLayout mCoordinatorTabLayout;*/
 
     private ArrayList<Fragment> mFragments;
 //    List<HomePageFragment> fragments = new ArrayList<>();
-    private int currentIndex = 0;
-    int[] mImageArray;
+    HomeAdapter mAdapter;
+    HomePageFragment androidFragment;
+    HomePageFragment iosFragment;
+    HomePageFragment frontFragment;
+    HomePageFragment backFragment;
 
-    public static String[] type = {"Android", "iOS", "前端", "后端", "设计", "产品", "阅读", "工具资源"};
+    public static String[] type = new String[]{"Android", "iOS", "前端", "后端"};
 
     @Override
     protected int getLayoutId() {
@@ -43,25 +47,51 @@ public class HomeFragment extends SimpleFragment {
     //初始化事件资源
     @Override
     protected void initEventAndData() {
-        LogUtil.d("开始打印信息。。。");
-        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        androidFragment = new HomePageFragment();
+        iosFragment = new HomePageFragment();
+        frontFragment = new HomePageFragment();
+        backFragment = new HomePageFragment();
+
+        Bundle androidBundle = new Bundle();
+        androidBundle.putString(Constants.IT_TYPE, type[0]);
+        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_ANDROID);
+        androidFragment.setArguments(androidBundle);
+
+        Bundle iosBundle = new Bundle();
+        androidBundle.putString(Constants.IT_TYPE, type[1]);
+        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_IOS);
+        androidFragment.setArguments(iosBundle);
+
+        Bundle frontBundle = new Bundle();
+        androidBundle.putString(Constants.IT_TYPE, type[2]);
+        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_FRONT);
+        androidFragment.setArguments(frontBundle);
+
+        Bundle backBundle = new Bundle();
+        androidBundle.putString(Constants.IT_TYPE, type[3]);
+        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_BACK);
+        androidFragment.setArguments(backBundle);
+
+        mFragments.add(androidFragment);
+        mFragments.add(iosFragment);
+        mFragments.add(frontFragment);
+        mFragments.add(backFragment);
+        mAdapter = new HomeAdapter(getChildFragmentManager(),mFragments);
+        mViewPager.setAdapter(mAdapter);
+
+        //TabLayout配合ViewPager有时会出现不显示Tab文字的Bug,需要按如下顺序
+        mTabLayout.addTab(mTabLayout.newTab().setText(type[0]));
+        mTabLayout.addTab(mTabLayout.newTab().setText(type[1]));
+        mTabLayout.addTab(mTabLayout.newTab().setText(type[2]));
+        mTabLayout.addTab(mTabLayout.newTab().setText(type[3]));
         mTabLayout.setupWithViewPager(mViewPager);
-
-       /* initFragments();
-        initViewPager();
-
-        mImageArray = new int[]{
-                R.drawable.bg_android,
-                R.drawable.bg_ios,
-                R.drawable.bg_js,
-                R.drawable.bg_other};
-
-        mCoordinatorTabLayout.setTitle("Demo")
-                .setBackEnable(true)
-                .setImageArray(mImageArray)
-//                .setContentScrimColorArray(mColorArray)
-                .setupWithViewPager(mViewPager);*/
+        mTabLayout.getTabAt(0).setText(type[0]);
+        mTabLayout.getTabAt(1).setText(type[1]);
+        mTabLayout.getTabAt(2).setText(type[2]);
+        mTabLayout.getTabAt(3).setText(type[3]);
     }
+
+
 
     //更新Tab
     /*@Override

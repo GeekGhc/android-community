@@ -1,24 +1,20 @@
 package com.gavin.community.mvp.adapter;
 
-
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 
-import com.gavin.community.mvp.ui.fragement.HomePageFragment;
-
 import java.util.List;
 
-public class HomePageAdapter extends FragmentPagerAdapter {
 
+public class HomeAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
     private Context mContext;
 
-    public HomePageAdapter(FragmentManager fm, List<Fragment> fragments) {
+    public HomeAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
     }

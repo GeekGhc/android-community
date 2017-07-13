@@ -4,13 +4,17 @@ import com.gavin.community.common.entity.User;
 import com.gavin.community.mvp.model.bean.TestData;
 
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface UserAPI {
 
-//    String HOST = "http://localhost:8000/api/";
+    String HOST = "http://10.0.3.2:8000/api/";
 
     /**
      * 用户的基本信息
@@ -18,8 +22,8 @@ public interface UserAPI {
     /*@GET("user/{userId}}")
     Call<User> getUser(@Path("userId") String userId);*/
 
-
-    @GET("test/{name}")
-    Call<TestData> getData(@Path("name") String name);
+    @FormUrlEncoded
+    @POST("test")
+    Observable<TestData> getData(@Field("name") String name);
 
 }

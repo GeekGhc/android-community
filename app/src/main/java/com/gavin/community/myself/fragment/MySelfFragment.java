@@ -26,11 +26,17 @@ import com.gavin.community.myself.followers.activity.FollowersActivity;
 import com.gavin.community.myself.following.activity.FollowingActivity;
 import com.gavin.community.profile.activity.ProfileActivity;
 import com.gavin.community.utils.ToastUtil;
+import com.google.common.eventbus.Subscribe;
 
+import org.reactivestreams.Subscriber;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -116,16 +122,18 @@ public class MySelfFragment extends Fragment implements MeFragementView {
         mPostActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 String url = "http://10.0.3.2:8000/api/";
-                String name = "gavin";
+                String name = "geekghc";
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(url)
                         //增加返回值为String的支持
                         .addConverterFactory(ScalarsConverterFactory.create())
                         .addConverterFactory(GsonConverterFactory.create())
+                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                         .build();
                 UserAPI userAPI = retrofit.create(UserAPI.class);
-                Call<TestData>call = userAPI.getData(name);
+                /*Call<TestData>call = userAPI.getData(name);
                 call.enqueue(new Callback<TestData>() {
                     @Override
                     public void onResponse(Call<TestData> call, Response<TestData> response) {
@@ -136,7 +144,7 @@ public class MySelfFragment extends Fragment implements MeFragementView {
                     public void onFailure(Call<TestData> call, Throwable t) {
                         ToastUtil.show("failed = "+t.toString());
                     }
-                });
+                });*/
 
             }
         });

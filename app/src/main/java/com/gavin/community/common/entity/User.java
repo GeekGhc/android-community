@@ -22,16 +22,12 @@ public class User {
     /**
      * 用户所在省级ID
      */
-    public int province;
+    public String province;
 
     /**
      * 用户所在城市ID
      */
-    public int city;
-    /**
-     * 用户所在地
-     */
-    public String location;
+    public String city;
     /**
      * 用户个人描述
      */
@@ -39,7 +35,7 @@ public class User {
     /**
      * 用户博客地址
      */
-    public String url;
+    public String site;
     /**
      * 用户的个性化背景(手机)
      */
@@ -55,27 +51,27 @@ public class User {
     /**
      * 粉丝数
      */
-    public int followers_count;
+    public String followers_count;
     /**
      * 关注数
      */
-    public int followings_count;
+    public String followings_count;
     /**
      * 帖子数
      */
-    public int posts_count;
+    public String posts_count;
     /**
      * 文章数
      */
-    public int articles_count;
+    public String articles_count;
     /**
      * 评论数
      */
-    public int comments_count;
+    public String comments_count;
     /**
      * 收藏数
      */
-    public int favourites_count;
+    public String favourites_count;
     /**
      * 用户创建（注册）时间
      */
@@ -86,5 +82,46 @@ public class User {
     public String ex_points;
 
 
+    public void setId(String id){
+        this.id = id;
+    }
+    public String getId(){
+        return this.id;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return this.name;
+    }
+
+    public void setCity(String city){
+        this.city = city;
+    }
+    public String getCity(){
+        return this.city;
+    }
+
+    public void setSite(String site){
+        this.site = site;
+    }
+    public String getSite(){
+        return this.site;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+    public String getDescription(){
+        return this.description;
+    }
+
+    public void setExPoints(String ex_points){
+        this.ex_points = ex_points;
+    }
+    public String getExPoints(){
+        return this.ex_points;
+    }
 
 }

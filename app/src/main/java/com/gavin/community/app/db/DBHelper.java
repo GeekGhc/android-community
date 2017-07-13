@@ -5,8 +5,6 @@ package com.gavin.community.app.db;
  */
 
 public interface DBHelper {
-    void insertNewsId(int id);
-
     /**
      * 查询 阅读记录
      * @param id
