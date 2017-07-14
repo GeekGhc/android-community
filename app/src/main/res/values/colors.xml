@@ -42,4 +42,18 @@
     <color name="rl_normal_bg">#FFFFFF</color><!--状态栏的的背景颜色-->
     <color name="rl_highlight_bg">#f2f2f2</color><!--状态栏的的背景颜色-->
     <color name="rl_textcolor">#111111</color>
+
+    <!--我的关注 -->
+    <color name="friend_item_name">#343434</color>
+    <color name="friend_item_description">#939393</color>
+    <color name="friend_item_button_follow_each_other">#5788BF</color> <!--互相关注 -->
+    <color name="friend_item_button_follow_alreay">#898989</color><!--已关注 -->
+    <color name="friend_item_button_follow_none">#e98219</color><!--加关注 -->
+
+    <!--我的粉丝 -->
+    <color name="follow_item_name">#343434</color>
+    <color name="follow_item_description">#595959</color>
+    <color name="follow_item_button_text">#e98219</color>
+    <color name="follow_item_constant_comefrom">#919191</color>
+    <color name="follow_item_comefrom">#4d80b2</color>
 </resources>

@@ -18,10 +18,6 @@ import javax.inject.Inject;
 
 import io.reactivex.functions.Function;
 
-/**
- * Created by Administrator on 2017/7/13.
- */
-
 public class TechPresenter  extends RxPresenter<TechContract.View> implements TechContract.Presenter {
 
     private DataManager mDataManager;

@@ -14,7 +14,6 @@ import com.gavin.community.R;
 
 import com.gavin.community.mvp.model.bean.GankItemBean;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
-import com.gavin.community.mvp.ui.fragement.HomePageFragment;
 import com.gavin.community.utils.DateUtils;
 
 import java.util.List;

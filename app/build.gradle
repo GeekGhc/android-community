@@ -45,7 +45,7 @@ dependencies {
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["cardview-v7"]
     compile rootProject.ext.dependencies["circleimageview"]
-    compile rootProject.ext.dependencies["support-v4"]
+//    compile rootProject.ext.dependencies["support-v4"]
 
     //ui
     compile rootProject.ext.dependencies["material-calendarview"]

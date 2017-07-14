@@ -5,6 +5,9 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.gavin.community.di.component.AppComponent;
+import com.gavin.community.di.module.AppModule;
+import com.gavin.community.di.module.HttpModule;
 import com.gavin.community.utils.LogUtil;
 
 import java.util.LinkedList;
@@ -16,6 +19,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     private List<Activity> mActivityList = new LinkedList<Activity>();
 
     private static App instance;
+    public static AppComponent appComponent;
     public static int SCREEN_WIDTH = -1;
     public static int SCREEN_HEIGHT = -1;
     public static float DIMEN_RATE = -1.0F;
@@ -84,4 +88,5 @@ public class App extends Application implements Application.ActivityLifecycleCal
         LogUtil.d("OnDestroyed = " + activity.getLocalClassName());
         mActivityList.remove(activity);
     }
+
 }

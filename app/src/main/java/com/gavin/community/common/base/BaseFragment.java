@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gavin.community.app.App;
 import com.gavin.community.di.component.FragmentComponent;
 import com.gavin.community.di.module.FragmentModule;
 
@@ -16,12 +17,14 @@ public abstract class BaseFragment<T extends BasePresenter> extends SimpleFragme
     @Inject
     protected T mPresenter;
 
+
     protected FragmentModule getFragmentModule(){
         return new FragmentModule(this);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        initInject();
         mPresenter.attachView(this);
         super.onViewCreated(view, savedInstanceState);
     }
@@ -56,4 +59,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends SimpleFragme
     public void stateMain() {
 
     }
+
+    protected abstract void initInject();
 }

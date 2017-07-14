@@ -21,6 +21,7 @@ import com.gavin.community.mvp.adapter.HomeAdapter;
 import com.gavin.community.mvp.adapter.HomePageAdapter;
 import com.gavin.community.mvp.model.bean.GankItemBean;
 import com.gavin.community.mvp.presenter.Home.TechPresenter;
+import com.gavin.community.utils.LogUtil;
 import com.gavin.community.utils.SystemUtil;
 import com.gavin.community.widget.TouchSwipeRefreshLayout;
 
@@ -58,12 +59,18 @@ public class HomePageFragment extends RootFragment<TechPresenter> implements Tec
         return R.layout.home_page_layout;
     }
 
+    @Override
+    protected void initInject() {
+
+    }
+
     //初始化事件资源
     @Override
     protected void initEventAndData() {
         mList = new ArrayList<>();
         tech = getArguments().getString(Constants.IT_TYPE);
         type = getArguments().getInt(Constants.IT_TYPE_CODE);
+        LogUtil.d("tech = "+tech);
         mAdapter = new HomePageAdapter(mContext,mList,tech);
         rvTechContent.setLayoutManager(new LinearLayoutManager(mContext));
         stateLoading();

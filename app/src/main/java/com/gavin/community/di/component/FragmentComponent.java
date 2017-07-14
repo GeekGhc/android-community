@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.gavin.community.di.module.FragmentModule;
 import com.gavin.community.di.scope.FragmentScope;
+import com.gavin.community.mvp.ui.fragement.HomePageFragment;
 
 import dagger.Component;
 
@@ -14,6 +15,8 @@ import dagger.Component;
 public interface FragmentComponent {
 
     Activity getActivity();
+
+//    void inject(HomePageFragment homePageFragment);
 
 //    void inject(DailyFragment dailyFragment);
 }
