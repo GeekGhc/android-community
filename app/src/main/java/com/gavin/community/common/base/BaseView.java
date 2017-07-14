@@ -6,6 +6,7 @@ package com.gavin.community.common.base;
  */
 
 public interface BaseView {
+    void showErrorMsg(String msg);
 
     void stateError();
 

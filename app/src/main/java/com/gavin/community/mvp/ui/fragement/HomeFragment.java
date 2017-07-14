@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.gavin.community.R;
 import com.gavin.community.app.Constants;
@@ -16,8 +18,10 @@ import com.gavin.community.mvp.adapter.HomeAdapter;
 import com.gavin.community.mvp.adapter.HomePageAdapter;
 import com.gavin.community.mvp.adapter.MyPagerAdapter;
 import com.gavin.community.utils.LogUtil;
+import com.gavin.community.utils.ToastUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -27,8 +31,10 @@ public class HomeFragment extends SimpleFragment {
     TabLayout mTabLayout;
     @BindView(R.id.vp_gold_main)
     ViewPager mViewPager;
+    @BindView(R.id.iv_menu)
+    ImageView mMenu;
 
-    private ArrayList<Fragment> mFragments = new ArrayList<>();
+    private List<Fragment> mFragments = new ArrayList<>();
 //    List<HomePageFragment> fragments = new ArrayList<>();
     HomeAdapter mAdapter;
     HomePageFragment androidFragment;
@@ -63,13 +69,13 @@ public class HomeFragment extends SimpleFragment {
         androidFragment.setArguments(iosBundle);
 
         Bundle frontBundle = new Bundle();
-        androidBundle.putString(Constants.IT_TYPE, type[2]);
-        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_FRONT);
+        frontBundle.putString(Constants.IT_TYPE, type[2]);
+        frontBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_FRONT);
         androidFragment.setArguments(frontBundle);
 
         Bundle backBundle = new Bundle();
-        androidBundle.putString(Constants.IT_TYPE, type[3]);
-        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_BACK);
+        backBundle.putString(Constants.IT_TYPE, type[3]);
+        backBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_BACK);
         androidFragment.setArguments(backBundle);
 
         mFragments.add(androidFragment);
@@ -89,9 +95,21 @@ public class HomeFragment extends SimpleFragment {
         mTabLayout.getTabAt(1).setText(type[1]);
         mTabLayout.getTabAt(2).setText(type[2]);
         mTabLayout.getTabAt(3).setText(type[3]);
+
+        initListener();
     }
 
 
+
+    private void initListener()
+    {
+        mMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show("啊哈哈哈");
+            }
+        });
+    }
 
     //更新Tab
     /*@Override

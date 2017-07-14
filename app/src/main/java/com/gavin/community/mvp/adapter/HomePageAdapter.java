@@ -2,43 +2,95 @@ package com.gavin.community.mvp.adapter;
 
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.gavin.community.R;
+
+import com.gavin.community.mvp.model.bean.GankItemBean;
+import com.gavin.community.mvp.ui.fragement.HomeFragment;
 import com.gavin.community.mvp.ui.fragement.HomePageFragment;
+import com.gavin.community.utils.DateUtils;
 
 import java.util.List;
 
-public class HomePageAdapter extends FragmentPagerAdapter {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private List<Fragment> fragments;
-    private Context mContext;
+public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public HomePageAdapter(FragmentManager fm, List<Fragment> fragments) {
-        super(fm);
-        this.fragments = fragments;
+    private LayoutInflater inflater;
+    private List<GankItemBean> mList;
+    private OnItemClickListener onItemClickListener;
+
+    private String tech;
+
+    public HomePageAdapter(Context mContext, List<GankItemBean> mList,String tech) {
+        inflater = LayoutInflater.from(mContext);
+        this.mList = mList;
+        this.tech = tech;
     }
 
     @Override
-    public Fragment getItem(int position) {
-        return fragments.get(position);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ViewHolder(inflater.inflate(R.layout.item_tech, parent, false));
     }
 
     @Override
-    public int getCount() {
-        return fragments.size();
-    }
-
-    public int getItemPosition(Object object) {
-        return PagerAdapter.POSITION_NONE;
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+        if(tech.equals(HomeFragment.type[0])) {
+            ((ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_android);
+        } else if(tech.equals(HomeFragment.type[1])) {
+            ((ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_ios);
+        } else if(tech.equals(HomeFragment.type[2])) {
+            ((ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_web);
+        }
+        ((ViewHolder)holder).tvContent.setText(mList.get(position).getDesc());
+        ((ViewHolder)holder).tvAuthor.setText(mList.get(position).getWho());
+        ((ViewHolder)holder).tvTime.setText(DateUtils.formatDateTime(DateUtils.subStandardTime(mList.get(position).getPublishedAt()), true));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onItemClickListener != null) {
+                    CardView cv = (CardView) view.findViewById(R.id.cv_tech_content);
+                    onItemClickListener.onItemClick(holder.getAdapterPosition(),cv);
+                }
+            }
+        });
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-//        super.destroyItem(container, position, object);
+    public int getItemCount() {
+        return mList.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.iv_tech_icon)
+        ImageView ivIcon;
+        @BindView(R.id.tv_tech_title)
+        TextView tvContent;
+        @BindView(R.id.tv_tech_author)
+        TextView tvAuthor;
+        @BindView(R.id.tv_tech_time)
+        TextView tvTime;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this,itemView);
+        }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position,View view);
     }
 }

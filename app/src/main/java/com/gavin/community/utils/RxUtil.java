@@ -1,5 +1,8 @@
 package com.gavin.community.utils;
 
+import com.gavin.community.app.exception.ApiException;
+import com.gavin.community.app.http.response.GankHttpResponse;
+
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
@@ -23,6 +26,29 @@ public class RxUtil {
             public Flowable<T> apply(Flowable<T> observable) {
                 return observable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread());
+            }
+        };
+    }
+
+    /**
+     * 统一返回结果处理
+     * @param <T>
+     * @return
+     */
+    public static <T> FlowableTransformer<GankHttpResponse<T>, T> handleResult() {   //compose判断结果
+        return new FlowableTransformer<GankHttpResponse<T>, T>() {
+            @Override
+            public Flowable<T> apply(Flowable<GankHttpResponse<T>> httpResponseFlowable) {
+                return httpResponseFlowable.flatMap(new Function<GankHttpResponse<T>, Flowable<T>>() {
+                    @Override
+                    public Flowable<T> apply(GankHttpResponse<T> tGankHttpResponse) {
+                        if(!tGankHttpResponse.getError()) {
+                            return createData(tGankHttpResponse.getResults());
+                        } else {
+                            return Flowable.error(new ApiException("服务器返回error"));
+                        }
+                    }
+                });
             }
         };
     }

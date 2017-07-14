@@ -16,6 +16,10 @@ public class App extends Application implements Application.ActivityLifecycleCal
     private List<Activity> mActivityList = new LinkedList<Activity>();
 
     private static App instance;
+    public static int SCREEN_WIDTH = -1;
+    public static int SCREEN_HEIGHT = -1;
+    public static float DIMEN_RATE = -1.0F;
+    public static int DIMEN_DPI = -1;
 
     @Override
     public void onCreate() {

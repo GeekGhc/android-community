@@ -2,6 +2,7 @@ package com.gavin.community.app.api;
 
 import com.gavin.community.app.http.response.GankHttpResponse;
 import com.gavin.community.mvp.model.bean.GankItemBean;
+import com.gavin.community.mvp.model.bean.GankSearchItemBean;
 
 import java.util.List;
 
@@ -34,5 +35,12 @@ public interface GankApis {
      */
     @GET("random/data/福利/{num}")
     Flowable<GankHttpResponse<List<GankItemBean>>> getRandomGirl(@Path("num") int num);
+
+    /**
+     * 搜索
+     */
+    @GET("search/query/{query}/category/{type}/count/{count}/page/{page}")
+    Flowable<GankHttpResponse<List<GankSearchItemBean>>> getSearchList(@Path("query") String query, @Path("type") String type, @Path("count") int num, @Path("page") int page);
+
 
 }
