@@ -2,7 +2,6 @@ package com.gavin.community.app;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
 
 import com.gavin.community.di.component.AppComponent;
@@ -87,6 +86,16 @@ public class App extends Application implements Application.ActivityLifecycleCal
     public void onActivityDestroyed(Activity activity) {
         LogUtil.d("OnDestroyed = " + activity.getLocalClassName());
         mActivityList.remove(activity);
+    }
+
+    public static AppComponent getAppComponent(){
+        /*if (appComponent == null) {
+            appComponent = DaggerAppComponent.builder()
+                    .appModule(new AppModule(instance))
+                    .httpModule(new HttpModule())
+                    .build();
+        }*/
+        return appComponent;
     }
 
 }

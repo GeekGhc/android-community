@@ -32,7 +32,7 @@ import butterknife.BindView;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
-public class HomePageFragment extends RootFragment<TechPresenter> implements TechContract.View {
+public class HomePageFragment extends SimpleFragment{
 
     @BindView(R.id.view_main)
     RecyclerView rvTechContent;
@@ -42,8 +42,6 @@ public class HomePageFragment extends RootFragment<TechPresenter> implements Tec
     ImageView ivBlur;
     @BindView(R.id.iv_tech_origin)
     ImageView ivOrigin;
-    @BindView(R.id.tv_tech_copyright)
-    TextView tvCopyright;
     @BindView(R.id.tech_appbar)
     AppBarLayout appbar;
 
@@ -59,19 +57,17 @@ public class HomePageFragment extends RootFragment<TechPresenter> implements Tec
         return R.layout.home_page_layout;
     }
 
-    @Override
+    /*@Override
     protected void initInject() {
-
-    }
+    }*/
 
     //初始化事件资源
     @Override
     protected void initEventAndData() {
         mList = new ArrayList<>();
-        tech = getArguments().getString(Constants.IT_TYPE);
-        type = getArguments().getInt(Constants.IT_TYPE_CODE);
-        LogUtil.d("tech = "+tech);
-        mAdapter = new HomePageAdapter(mContext,mList,tech);
+        /*tech = getArguments().getString(Constants.IT_TYPE);
+        type = getArguments().getInt(Constants.IT_TYPE_CODE);*/
+        /*mAdapter = new HomePageAdapter(mContext,mList,tech);
         rvTechContent.setLayoutManager(new LinearLayoutManager(mContext));
         stateLoading();
         rvTechContent.setAdapter(mAdapter);
@@ -120,19 +116,19 @@ public class HomePageFragment extends RootFragment<TechPresenter> implements Tec
             public void onRefresh() {
                 mPresenter.getGankData(tech, type);
             }
-        });
+        });*/
 
     }
 
-    @Override
+    /*@Override
     public void stateError() {
         super.stateError();
         if(swipeRefresh.isRefreshing()) {
             swipeRefresh.setRefreshing(false);
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void showContent(List<GankItemBean> list) {
         if(swipeRefresh.isRefreshing()) {
             swipeRefresh.setRefreshing(false);
@@ -141,20 +137,20 @@ public class HomePageFragment extends RootFragment<TechPresenter> implements Tec
         mList.clear();
         mList.addAll(list);
         mAdapter.notifyDataSetChanged();
-    }
+    }*/
 
-    @Override
+  /*  @Override
     public void showMoreContent(List<GankItemBean> list) {
         stateMain();
         mList.addAll(list);
         mAdapter.notifyDataSetChanged();
         isLoadingMore = false;
-    }
+    }*/
 
-    @Override
+  /*  @Override
     public void showGirlImage(String url, String copyright) {
         ImageLoader.load(mContext, url, ivOrigin);
         Glide.with(mContext).load(url).bitmapTransform(new BlurTransformation(mContext)).into(ivBlur);
         tvCopyright.setText(String.format("by: %s",copyright));
-    }
+    }*/
 }

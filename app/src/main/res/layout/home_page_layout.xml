@@ -44,15 +44,6 @@
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="parallax" />
-                <TextView
-                    android:id="@+id/tv_tech_copyright"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:layout_margin="12dp"
-                    />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 

@@ -10,7 +10,7 @@
         android:transitionName="shareView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.tencent.smtt.sdk.WebView
+        <android.support.design.widget.TabLayout.TabView
             android:id="@+id/wv_tech_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
