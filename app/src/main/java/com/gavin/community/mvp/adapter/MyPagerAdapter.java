@@ -59,7 +59,6 @@ public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         ((ViewHolder)holder).tvTitle.setText(mList.get(position).getTitle());
         ((ViewHolder)holder).tvComment.setText(mList.get(position).getCommentCount());
         ((ViewHolder)holder).tvTime.setText(mList.get(position).getCreatedAt());
-//        ((MyPagerAdapter.ViewHolder)holder).tvTime.setText(DateUtils.formatDateTime(DateUtils.subStandardTime(mList.get(position).getCreatedAt()), true));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

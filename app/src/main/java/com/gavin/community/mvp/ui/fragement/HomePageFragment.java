@@ -19,7 +19,9 @@ import com.gavin.community.component.ImageLoader;
 import com.gavin.community.home.activity.TechDetailActivity;
 import com.gavin.community.mvp.adapter.HomeAdapter;
 import com.gavin.community.mvp.adapter.HomePageAdapter;
+import com.gavin.community.mvp.adapter.MyPagerAdapter;
 import com.gavin.community.mvp.model.bean.GankItemBean;
+import com.gavin.community.mvp.model.bean.PostItemBean;
 import com.gavin.community.mvp.presenter.Home.TechPresenter;
 import com.gavin.community.utils.LogUtil;
 import com.gavin.community.utils.SystemUtil;
@@ -33,7 +35,7 @@ import butterknife.BindView;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
-public class HomePageFragment extends SimpleFragment{
+public class HomePageFragment extends SimpleFragment {
 
     @BindView(R.id.view_main)
     RecyclerView rvTechContent;
@@ -46,8 +48,8 @@ public class HomePageFragment extends SimpleFragment{
     @BindView(R.id.tech_appbar)
     AppBarLayout appbar;
 
-    List<GankItemBean> mList;
-    HomePageAdapter mAdapter;
+    List<PostItemBean> mList;
+    MyPagerAdapter mAdapter;
 
     boolean isLoadingMore = false;
     String tech;
@@ -67,26 +69,19 @@ public class HomePageFragment extends SimpleFragment{
     protected void initEventAndData() {
         mList = new ArrayList<>();
         tech = getArguments().getString(Constants.IT_TYPE);
-        ToastUtil.show("data = "+tech);
-        /*tech = getArguments().getString(Constants.IT_TYPE);
-        type = getArguments().getInt(Constants.IT_TYPE_CODE);*/
-        /*mAdapter = new HomePageAdapter(mContext,mList,tech);
+        type = getArguments().getInt(Constants.IT_TYPE_CODE);
+        mAdapter = new MyPagerAdapter(mContext, mList, tech);
         rvTechContent.setLayoutManager(new LinearLayoutManager(mContext));
-        stateLoading();
-        rvTechContent.setAdapter(mAdapter);
-        mPresenter.getGankData(tech, type);
-        mAdapter.setOnItemClickListener(new HomePageAdapter.OnItemClickListener() {
+
+        //设置每个item的点击事件
+        mAdapter.setOnItemClickListener(new MyPagerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View shareView) {
-                TechDetailActivity.launch(new TechDetailActivity.Builder()
-                        .setContext(mContext)
-                        .setId(mList.get(position).get_id())
-                        .setTitle(mList.get(position).getDesc())
-                        .setUrl(mList.get(position).getUrl())
-                        .setType(type)
-                        .setAnimConfig(mActivity, shareView));
+
             }
         });
+
+        //下拉加载更多
         rvTechContent.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -96,7 +91,7 @@ public class HomePageFragment extends SimpleFragment{
                 if (lastVisibleItem >= totalItemCount - 2 && dy > 0) {  //还剩2个Item时加载更多
                     if(!isLoadingMore){
                         isLoadingMore = true;
-                        mPresenter.getMoreGankData(tech);
+
                     }
                 }
             }
@@ -114,17 +109,17 @@ public class HomePageFragment extends SimpleFragment{
                 }
             }
         });
+        //设置下拉刷新事件
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mPresenter.getGankData(tech, type);
+                ToastUtil.show("下拉加载更多哦");
             }
-        });*/
+        });
+}
 
-    }
 
-
-    private void setListener(){
+    private void setListener() {
         //swipeRefreshLayout刷新监听
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
