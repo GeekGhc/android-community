@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_tech_content"
+        android:id="@+id/cv_post_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
@@ -33,11 +33,10 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_gold_item_title"
+                    android:id="@+id/tv_post_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_toEndOf="@id/iv_gold_item_img"
                     android:ellipsize="end"
                     android:lineSpacingMultiplier="1.2"
                     android:maxLines="2"
@@ -52,9 +51,9 @@
                     android:ellipsize="end"
                     >
                     <TextView
+                        android:id="@+id/tv_post_author"
                         android:layout_marginStart="12dp"
                         android:layout_alignParentStart="true"
-                        android:id="@+id/tv_post_author"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/comment_reply"
@@ -65,9 +64,9 @@
                         android:drawablePadding="6dp"/>
 
                     <TextView
+                        android:id="@+id/tv_post_comment"
                         android:layout_marginStart="12dp"
                         android:layout_alignParentStart="true"
-                        android:id="@+id/tv_post_comment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/comment_reply"
@@ -78,9 +77,9 @@
                         android:drawablePadding="6dp"/>
 
                     <TextView
+                        android:id="@+id/tv_post_time"
                         android:layout_marginStart="12dp"
                         android:layout_alignParentStart="true"
-                        android:id="@+id/tv_post_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/comment_reply"
@@ -93,7 +92,7 @@
             </LinearLayout>
 
             <com.gavin.community.widget.SquareImageView
-                android:id="@+id/iv_gold_item_img"
+                android:id="@+id/iv_post_img"
                 android:layout_width="@dimen/post_image_size"
                 android:layout_height="@dimen/post_image_size"
                 android:scaleType="centerCrop"

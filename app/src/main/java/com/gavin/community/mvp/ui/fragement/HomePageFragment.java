@@ -23,6 +23,7 @@ import com.gavin.community.mvp.model.bean.GankItemBean;
 import com.gavin.community.mvp.presenter.Home.TechPresenter;
 import com.gavin.community.utils.LogUtil;
 import com.gavin.community.utils.SystemUtil;
+import com.gavin.community.utils.ToastUtil;
 import com.gavin.community.widget.TouchSwipeRefreshLayout;
 
 import java.util.ArrayList;
@@ -65,6 +66,8 @@ public class HomePageFragment extends SimpleFragment{
     @Override
     protected void initEventAndData() {
         mList = new ArrayList<>();
+        tech = getArguments().getString(Constants.IT_TYPE);
+        ToastUtil.show("data = "+tech);
         /*tech = getArguments().getString(Constants.IT_TYPE);
         type = getArguments().getInt(Constants.IT_TYPE_CODE);*/
         /*mAdapter = new HomePageAdapter(mContext,mList,tech);
@@ -119,6 +122,18 @@ public class HomePageFragment extends SimpleFragment{
         });*/
 
     }
+
+
+    private void setListener(){
+        //swipeRefreshLayout刷新监听
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+            }
+        });
+    }
+
 
     /*@Override
     public void stateError() {

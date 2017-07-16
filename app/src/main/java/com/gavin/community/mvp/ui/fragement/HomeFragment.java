@@ -4,20 +4,14 @@ package com.gavin.community.mvp.ui.fragement;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.gavin.community.R;
 import com.gavin.community.app.Constants;
-import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.common.base.SimpleFragment;
 import com.gavin.community.mvp.adapter.HomeAdapter;
-import com.gavin.community.mvp.adapter.HomePageAdapter;
-import com.gavin.community.mvp.adapter.MyPagerAdapter;
-import com.gavin.community.utils.LogUtil;
 import com.gavin.community.utils.ToastUtil;
 
 import java.util.ArrayList;
@@ -42,7 +36,7 @@ public class HomeFragment extends SimpleFragment {
     HomePageFragment frontFragment;
     HomePageFragment backFragment;
 
-    public static String[] type = new String[]{"Android", "iOS", "前端", "后端"};
+    public static String[] type = new String[]{"Android", "iOS", "前端", "PHP"};
 
     @Override
     protected int getLayoutId() {
@@ -64,19 +58,19 @@ public class HomeFragment extends SimpleFragment {
         androidFragment.setArguments(androidBundle);
 
         Bundle iosBundle = new Bundle();
-        androidBundle.putString(Constants.IT_TYPE, type[1]);
-        androidBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_IOS);
-        androidFragment.setArguments(iosBundle);
+        iosBundle.putString(Constants.IT_TYPE, type[1]);
+        iosBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_IOS);
+        iosFragment.setArguments(iosBundle);
 
         Bundle frontBundle = new Bundle();
         frontBundle.putString(Constants.IT_TYPE, type[2]);
         frontBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_FRONT);
-        androidFragment.setArguments(frontBundle);
+        frontFragment.setArguments(frontBundle);
 
         Bundle backBundle = new Bundle();
         backBundle.putString(Constants.IT_TYPE, type[3]);
         backBundle.putInt(Constants.IT_TYPE_CODE, Constants.TYPE_BACK);
-        androidFragment.setArguments(backBundle);
+        backFragment.setArguments(backBundle);
 
         mFragments.add(androidFragment);
         mFragments.add(iosFragment);
