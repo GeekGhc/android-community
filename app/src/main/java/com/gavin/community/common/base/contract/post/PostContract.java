@@ -18,12 +18,12 @@ public interface PostContract {
 
         void showMoreContent(List<PostItemBean> mList);
 
-        void showGirlImage(String url, String copyright);
+        void showTypeImage(String url, String copyright);
     }
 
     interface Presenter extends BasePresenter<View> {
 
-        void getPostData(String tech, int type);
+        void  getPostData(String tech, int type);
 
         void getMorePostData(String tech);
 

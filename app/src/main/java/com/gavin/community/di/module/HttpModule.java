@@ -3,6 +3,7 @@ package com.gavin.community.di.module;
 
 import com.gavin.community.app.Constants;
 import com.gavin.community.app.api.GankApis;
+import com.gavin.community.app.api.PostAPI;
 import com.gavin.community.di.qualifier.GankUrl;
 import com.gavin.community.utils.SystemUtil;
 
@@ -50,10 +51,17 @@ public class HttpModule {
         return createRetrofit(builder, client, GankApis.HOST);
     }
 
+    @Provides
+    @GankUrl
+    public Retrofit providePostRetrofit(Retrofit.Builder builder, OkHttpClient client) {
+        builder = this.provideRetrofitBuilder();
+        client = this.provideOkHttpBuilder().build();
+        return createRetrofit(builder, client, PostAPI.HOST);
+    }
 
     @Singleton
     @Provides
-    OkHttpClient provideClient(OkHttpClient.Builder builder) {
+    public OkHttpClient provideClient(OkHttpClient.Builder builder) {
         if (true) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);

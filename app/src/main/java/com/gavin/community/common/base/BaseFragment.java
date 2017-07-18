@@ -17,17 +17,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends SimpleFragme
     @Inject
     protected T mPresenter;
 
-    /*protected FragmentComponent getFragmentComponent(){
-        return DaggerFragmentComponent.builder()
-                .appComponent(App.getAppComponent())
-                .fragmentModule(getFragmentModule())
-                .build();
-    }*/
-
-
-    protected FragmentModule getFragmentModule(){
-        return new FragmentModule(this);
-    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

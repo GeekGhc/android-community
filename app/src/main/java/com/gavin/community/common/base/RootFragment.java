@@ -8,9 +8,11 @@ import com.gavin.community.widget.ProgressImageView;
 
 /**
  * Created by Administrator on 2017/7/13.
+ * 设置过程变化
  */
 
 public abstract class RootFragment <T extends BasePresenter> extends BaseFragment<T>{
+
     private static final int STATE_MAIN = 0x00;
     private static final int STATE_LOADING = 0x01;
     private static final int STATE_ERROR = 0x02;
@@ -104,4 +106,5 @@ public abstract class RootFragment <T extends BasePresenter> extends BaseFragmen
     public void setErrorResource(int errorLayoutResource) {
         this.mErrorResource = errorLayoutResource;
     }
+
 }

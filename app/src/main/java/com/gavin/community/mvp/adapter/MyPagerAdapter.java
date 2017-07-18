@@ -1,10 +1,6 @@
 package com.gavin.community.mvp.adapter;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +9,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gavin.community.R;
-import com.gavin.community.mvp.model.bean.GankItemBean;
 import com.gavin.community.mvp.model.bean.PostItemBean;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
-import com.gavin.community.utils.DateUtils;
+import com.gavin.community.mvp.ui.fragement.HomePageFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MyPagerAdapter extends RecyclerView.Adapter<MyPagerAdapter.MyViewHolder> {
     private LayoutInflater inflater;
     private List<PostItemBean> mList;
     private MyPagerAdapter.OnItemClickListener onItemClickListener;
@@ -39,38 +33,38 @@ public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new HomePageAdapter.ViewHolder(inflater.inflate(R.layout.item_tech, parent, false));
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new MyPagerAdapter.MyViewHolder(inflater.inflate(R.layout.item_post, parent, false));
     }
 
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, int position) {
         if(tech.equals(HomeFragment.type[0])) {
-            ((HomePageAdapter.ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_android);
+            holder.ivImg.setImageResource(R.mipmap.ic_android);
         } else if(tech.equals(HomeFragment.type[1])) {
-            ((HomePageAdapter.ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_ios);
+           holder.ivImg.setImageResource(R.mipmap.ic_ios);
         } else if(tech.equals(HomeFragment.type[2])) {
-            ((HomePageAdapter.ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_web);
+            holder.ivImg.setImageResource(R.mipmap.ic_web);
         }else if(tech.equals(HomeFragment.type[3])){
-            ((HomePageAdapter.ViewHolder)holder).ivIcon.setImageResource(R.mipmap.ic_php);
+            holder.ivImg.setImageResource(R.mipmap.ic_php);
         }
-        ((ViewHolder)holder).tvAuthor.setText(mList.get(position).getAuthor());
-        ((ViewHolder)holder).tvTitle.setText(mList.get(position).getTitle());
-        ((ViewHolder)holder).tvComment.setText(mList.get(position).getCommentCount());
-        ((ViewHolder)holder).tvTime.setText(mList.get(position).getCreatedAt());
+        holder.tvAuthor.setText(mList.get(position).getAuthor());
+        holder.tvTitle.setText(mList.get(position).getTitle());
+        holder.tvComment.setText(mList.get(position).getComment_count());
+        holder.tvTime.setText(mList.get(position).getCreated_at());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(onItemClickListener != null) {
-                    CardView cv = (CardView) view.findViewById(R.id.cv_post_content);
-                    onItemClickListener.onItemClick(holder.getAdapterPosition(),cv);
+                    /*CardView cv = (CardView) view.findViewById(R.id.cv_post_content);
+                    onItemClickListener.onItemClick(holder.getAdapterPosition(),cv);*/
                 }
             }
         });
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.iv_post_img)
         ImageView ivImg;
@@ -82,7 +76,7 @@ public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         TextView tvComment;
         @BindView(R.id.tv_post_time)
         TextView tvTime;
-        public ViewHolder(View itemView) {
+        public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
         }

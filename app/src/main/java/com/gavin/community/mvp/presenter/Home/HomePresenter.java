@@ -22,10 +22,10 @@ public class HomePresenter extends RxPresenter<TechContract.View> implements Tec
     private String currentTech = HomeFragment.type[0];
     private int currentType = Constants.TYPE_ANDROID;
 
-    @Override
+    /*@Override
     public void attachView(TechContract.View view) {
         super.attachView(view);
-    }
+    }*/
 
     @Override
     public void getGankData(String tech, int type) {

@@ -5,7 +5,7 @@ package com.gavin.community.app.http.response;
  * Created by Administrator on 2017/7/13.
  */
 
-public class PostHttpRespnse<T> {
+public class PostHttpResponse<T> {
 
     private int code;
     private String message;
@@ -19,16 +19,16 @@ public class PostHttpRespnse<T> {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
     public void setData(T data) {
         this.data = data;
     }
 
     public T getData() {
         return data;
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public void setMessage(String message) {

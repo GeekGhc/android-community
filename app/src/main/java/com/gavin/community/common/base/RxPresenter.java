@@ -5,6 +5,8 @@ import com.gavin.community.component.RxBus;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
 
 /**
  * Created by Administrator on 2017/7/10.
@@ -15,6 +17,9 @@ public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
 
     protected T mView;
     protected CompositeDisposable mCompositeDisposable;
+    protected Retrofit mRetrofit;
+    protected Retrofit.Builder mRetrofitBuilder;
+    protected OkHttpClient mClient;
 
     protected void unSubscribe() {
         if (mCompositeDisposable != null) {

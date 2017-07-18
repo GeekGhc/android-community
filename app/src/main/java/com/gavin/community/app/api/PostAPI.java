@@ -1,10 +1,23 @@
 package com.gavin.community.app.api;
 
+import com.gavin.community.app.http.response.PostHttpResponse;
+import com.gavin.community.mvp.model.bean.PostItemBean;
+
+import java.util.List;
+
+import io.reactivex.Flowable;
+import io.reactivex.Observable;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
 /**
  * Created by Administrator on 2017/7/13.
  */
 
 public interface PostAPI {
 
-    String HOST = "http://kobeman.com/api/post/";
+    String HOST = "http://10.0.3.2:8000/api/posts/";
+
+    @GET("list")
+    Flowable<PostHttpResponse<List<PostItemBean>>> getPostList(@Query("type") String name, @Query("limit") int limit, @Query("page") int page);
 }

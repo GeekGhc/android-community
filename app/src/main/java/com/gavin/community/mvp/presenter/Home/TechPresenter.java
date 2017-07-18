@@ -33,10 +33,10 @@ public class TechPresenter  extends RxPresenter<TechContract.View> implements Te
         this.mDataManager = mDataManager;
     }
 
-    @Override
+    /*@Override
     public void attachView(TechContract.View view) {
         super.attachView(view);
-    }
+    }*/
 
     @Override
     public void getGankData(String tech, int type) {

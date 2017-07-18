@@ -29,11 +29,11 @@ public class PostItemBean {
         this.title = title;
     }
 
-    public String getCreatedAt() {
+    public String getCreated_at() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreated_at(String createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -45,19 +45,19 @@ public class PostItemBean {
         this.author = author;
     }
 
-    public String getViewCount() {
+    public String getView_count() {
         return viewCount;
     }
 
-    public void setViewCount(String viewCount) {
+    public void setView_count(String viewCount) {
         this.viewCount = viewCount;
     }
 
-    public String getCommentCount() {
+    public String getComment_count() {
         return commentCount;
     }
 
-    public void setCommentCount(String commentCount) {
+    public void setComment_count(String commentCount) {
         this.commentCount = commentCount;
     }
 }
