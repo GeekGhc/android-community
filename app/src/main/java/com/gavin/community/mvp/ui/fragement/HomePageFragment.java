@@ -152,7 +152,6 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         mList.clear();
         mList.addAll(list);
         mAdapter.notifyDataSetChanged();
-        ToastUtil.show("这里执行了 = "+mList.size());
     }
 
     @Override

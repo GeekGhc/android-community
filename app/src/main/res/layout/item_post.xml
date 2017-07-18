@@ -60,6 +60,7 @@
                         android:drawableStart="@mipmap/people"
                         android:ellipsize="end"
                         android:text="JellyBean"
+                        android:textSize="12sp"
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"/>
 
@@ -73,6 +74,7 @@
                         android:drawableStart="@mipmap/comments"
                         android:ellipsize="end"
                         android:text="45"
+                        android:textSize="12sp"
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"/>
 
@@ -86,6 +88,7 @@
                         android:drawableStart="@mipmap/clock"
                         android:ellipsize="end"
                         android:text="3天前"
+                        android:textSize="12sp"
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"/>
                 </LinearLayout>

@@ -45,7 +45,7 @@ public class PostItemBean {
         this.author = author;
     }
 
-    public String getView_count() {
+    public String getViewCount() {
         return viewCount;
     }
 

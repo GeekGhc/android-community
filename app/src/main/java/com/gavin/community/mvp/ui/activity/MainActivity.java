@@ -50,7 +50,6 @@ public class MainActivity extends SimpleActivity {
 
 
     private String mCurrentIndex;
-    private boolean mComeFromAccoutActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -90,7 +89,7 @@ public class MainActivity extends SimpleActivity {
     private void initView()
     {
         mBarManager = new BarManager();
-        mBarManager.showBottomBar(mButtonBarLl);
+//        mBarManager.showBottomBar(mButtonBarLl);
         mFragmentManager = getSupportFragmentManager();
     }
 
@@ -149,7 +148,7 @@ public class MainActivity extends SimpleActivity {
      */
     private void switchToFragment(String index) {
         mButtonBarLl.clearAnimation();
-        mButtonBarLl.setVisibility(View.VISIBLE);
+//        mButtonBarLl.setVisibility(View.VISIBLE);
         mTransaction = mFragmentManager.beginTransaction();
         hideAllFragments(mTransaction);
         switch (index) {
@@ -234,7 +233,7 @@ public class MainActivity extends SimpleActivity {
      */
     private void setTabFragment(String tabName) {
         if (mHomeFragment != null) {
-            mBarManager.showBottomBar(mButtonBarLl);
+//            mBarManager.showBottomBar(mButtonBarLl);
         }
 
         if (!tabName.equals(mCurrentIndex)) {

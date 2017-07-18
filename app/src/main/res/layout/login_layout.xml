@@ -12,6 +12,7 @@
         android:background="@color/topbar_bg">
 
         <ImageView
+            android:id="@+id/toolbar_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_action_left"
@@ -51,11 +52,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:drawableBottom="@null"
+            android:drawableBottom="@color/colorPrimary"
             android:hint="邮箱/手机号"
+            android:textCursorDrawable="@null"
             android:inputType="textEmailAddress"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:textColorHint="@color/user_panel_color"
             android:textColor="@color/color_black" />
 
         <EditText android:id="@+id/input_password"
@@ -64,8 +67,9 @@
             android:inputType="numberPassword"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:drawableBottom="@drawable/login_edit_normal"
+            android:textCursorDrawable="@null"
             android:drawableRight="@mipmap/ic_eyes"
+            android:textColorHint="@color/user_panel_color"
             android:textColor="@color/color_black"
             android:hint="密码" />
     </LinearLayout>
@@ -101,6 +105,7 @@
         android:layout_marginTop="12dp"
         >
         <TextView
+            android:id="@+id/forget_password_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -111,6 +116,7 @@
             android:paddingRight="20dp"
             />
         <TextView
+            android:id="@+id/register_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"

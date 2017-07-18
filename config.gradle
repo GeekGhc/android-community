@@ -64,6 +64,7 @@ ext {
 
             //other
             "fragmentation"             : "me.yokeyword:fragmentation:0.10.4",
+            'RecyclerViewBanner'          : "com.github.loonggg:RecyclerViewBanner:v1.2.2",
 
     ]
 }

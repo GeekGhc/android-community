@@ -3,10 +3,10 @@
     package="com.gavin.community">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
@@ -36,7 +36,12 @@
         <activity android:name=".myself.followers.activity.FollowersActivity" />
         <activity android:name=".myself.following.activity.FollowingActivity" />
         <activity android:name=".myself.favorite.activity.FavoriteActivity" />
-        <activity android:name=".profile.activity.EditProfileActivity"></activity>
+        <activity android:name=".profile.activity.EditProfileActivity" />
+        <activity android:name=".home.activity.PostDetailActivity" />
+        <activity android:name=".myself.activity.LoginActivity">
+
+        </activity>
+        <activity android:name=".myself.activity.RegisterActivity"></activity>
     </application>
 
 </manifest>

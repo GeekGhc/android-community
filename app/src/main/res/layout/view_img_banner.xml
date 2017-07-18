@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:loonggg="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gavin.community.mvp.ui.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.loonggg.rvbanner.lib.RecyclerViewBanner
+            android:id="@+id/rv_banner_1"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:background="@color/colorPrimaryDark"/>
+        <!--tools:background在编译运行时会被忽略，此处添加可以方便查看Indicator的状态-->
+    </LinearLayout>
+</ScrollView>

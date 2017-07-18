@@ -12,6 +12,7 @@
         android:background="@color/topbar_bg">
 
         <ImageView
+            android:id="@+id/toolbar_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_action_left"
@@ -51,11 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:drawableBottom="@null"
+            android:textCursorDrawable="@null"
             android:hint="邮箱/手机号"
             android:inputType="textEmailAddress"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:textColorHint="@color/user_panel_color"
             android:textColor="@color/color_black" />
 
         <EditText
@@ -63,11 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:drawableBottom="@null"
+            android:textCursorDrawable="@null"
             android:hint="昵称"
             android:inputType="text"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:textColorHint="@color/user_panel_color"
             android:textColor="@color/color_black" />
 
         <EditText android:id="@+id/input_password"
@@ -76,8 +79,9 @@
             android:inputType="numberPassword"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:drawableBottom="@null"
+            android:textCursorDrawable="@null"
             android:drawableRight="@mipmap/ic_eyes"
+            android:textColorHint="@color/user_panel_color"
             android:textColor="@color/color_black"
             android:hint="密码" />
     </LinearLayout>
@@ -92,7 +96,7 @@
         android:background="@color/user_panel_color" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"

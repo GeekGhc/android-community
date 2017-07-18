@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
-    app:titleTextColor="@android:color/white"
+    app:titleTextColor="@color/toolbar_color"
     android:background="@color/colorPrimaryDark"
     android:minHeight="45dp" />
