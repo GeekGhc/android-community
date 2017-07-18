@@ -96,6 +96,7 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
                 if (lastVisibleItem >= totalItemCount - 2 && dy > 0) {  //还剩2个Item时加载更多
                     if (!isLoadingMore) {
                         isLoadingMore = true;
+                        mPagePresenter.getMorePostData(tech);
                     }
                 }
             }
@@ -119,7 +120,6 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-//                mPresenter.getPostData(tech,type);
                 mPagePresenter.getPostData(tech,type);
             }
         });

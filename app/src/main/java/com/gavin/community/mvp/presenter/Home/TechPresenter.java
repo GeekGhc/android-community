@@ -21,9 +21,9 @@ import io.reactivex.functions.Function;
 public class TechPresenter  extends RxPresenter<TechContract.View> implements TechContract.Presenter {
 
     private DataManager mDataManager;
-    private static final int NUM_OF_PAGE = 20;
+    private static final int NUM_OF_PAGE = 6;
 
-    private int currentPage = 1;
+    private int currentPage = 0;
     private String queryStr = null;
     private String currentTech = HomeFragment.type[0];
     private int currentType = Constants.TYPE_ANDROID;
@@ -41,7 +41,7 @@ public class TechPresenter  extends RxPresenter<TechContract.View> implements Te
     @Override
     public void getGankData(String tech, int type) {
         queryStr = null;
-        currentPage = 1;
+        currentPage = 0;
         currentTech = tech;
         currentType = type;
         addSubscribe(mDataManager.fetchTechList(tech,NUM_OF_PAGE,currentPage)

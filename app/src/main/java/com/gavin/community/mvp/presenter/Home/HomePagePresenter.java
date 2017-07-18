@@ -27,7 +27,7 @@ import retrofit2.Retrofit;
 
 public class HomePagePresenter implements PostContract.Presenter {
 
-    private int currentPage = 1;
+    private int currentPage = 0;
     private int limitCount = 8;
     private String currentTech = HomeFragment.type[0];
     protected Retrofit mRetrofit;
@@ -67,17 +67,10 @@ public class HomePagePresenter implements PostContract.Presenter {
                     public void onSubscribe(Subscription s) {
                         s.request(Long.MAX_VALUE);
                     }
-
                     @Override
-                    public void onComplete() {
-
-                    }
-
+                    public void onComplete() {}
                     @Override
-                    public void onError(Throwable e) {
-
-                    }
-
+                    public void onError(Throwable e) {}
                     @Override
                     public void onNext(PostHttpResponse<List<PostItemBean>> postHttpResponse) {
                         mList = postHttpResponse.getData();
@@ -88,7 +81,24 @@ public class HomePagePresenter implements PostContract.Presenter {
 
     @Override
     public void getMorePostData(String tech) {
-
+        postService.getPostList(currentTech,limitCount,++currentPage)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<PostHttpResponse<List<PostItemBean>>>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+                        s.request(Long.MAX_VALUE);
+                    }
+                    @Override
+                    public void onComplete() {}
+                    @Override
+                    public void onError(Throwable e) {}
+                    @Override
+                    public void onNext(PostHttpResponse<List<PostItemBean>> postHttpResponse) {
+                        mList = postHttpResponse.getData();
+                        mView.showMoreContent(mList);
+                    }
+                });
     }
 
     @Override
