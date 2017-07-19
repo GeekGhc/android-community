@@ -61,11 +61,6 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         return R.layout.home_page_layout;
     }
 
-   /* @Override
-    protected void initInject() {
-
-    }*/
-
     //初始化事件资源
     @Override
     protected void initEventAndData() {

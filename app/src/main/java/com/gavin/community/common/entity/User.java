@@ -17,6 +17,7 @@ public class User {
     /**
      * 用户头像
      */
+
     public String avatar;
 
     /**
@@ -81,47 +82,148 @@ public class User {
      */
     public String ex_points;
 
+    public String getId() {
+        return id;
+    }
 
-    public void setId(String id){
+    public void setId(String id) {
         this.id = id;
     }
-    public String getId(){
-        return this.id;
+
+    public String getName() {
+        return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
-        return this.name;
+
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setCity(String city){
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
         this.city = city;
     }
-    public String getCity(){
-        return this.city;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setSite(String site){
-        this.site = site;
-    }
-    public String getSite(){
-        return this.site;
-    }
-
-    public void setDescription(String description){
+    public void setDescription(String description) {
         this.description = description;
     }
-    public String getDescription(){
-        return this.description;
+
+    public String getSite() {
+        return site;
     }
 
-    public void setExPoints(String ex_points){
-        this.ex_points = ex_points;
+    public void setSite(String site) {
+        this.site = site;
     }
-    public String getExPoints(){
-        return this.ex_points;
+
+    public String getCover_image() {
+        return cover_image;
+    }
+
+    public void setCover_image(String cover_image) {
+        this.cover_image = cover_image;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getFollowers_count() {
+        return followers_count;
+    }
+
+    public void setFollowers_count(String followers_count) {
+        this.followers_count = followers_count;
+    }
+
+    public String getFollowings_count() {
+        return followings_count;
+    }
+
+    public void setFollowings_count(String followings_count) {
+        this.followings_count = followings_count;
+    }
+
+    public String getPosts_count() {
+        return posts_count;
+    }
+
+    public void setPosts_count(String posts_count) {
+        this.posts_count = posts_count;
+    }
+
+    public String getArticles_count() {
+        return articles_count;
+    }
+
+    public void setArticles_count(String articles_count) {
+        this.articles_count = articles_count;
+    }
+
+    public String getComments_count() {
+        return comments_count;
+    }
+
+    public void setComments_count(String comments_count) {
+        this.comments_count = comments_count;
+    }
+
+    public String getFavourites_count() {
+        return favourites_count;
+    }
+
+    public void setFavourites_count(String favourites_count) {
+        this.favourites_count = favourites_count;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getEx_points() {
+        return ex_points;
+    }
+
+    public void setEx_points(String ex_points) {
+        this.ex_points = ex_points;
     }
 
 }

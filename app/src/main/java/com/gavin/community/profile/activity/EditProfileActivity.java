@@ -35,7 +35,6 @@ public class EditProfileActivity extends SimpleActivity {
 
     protected void prepareView() {
         bundle = this.getIntent().getExtras();
-        ToastUtil.show("title = "+bundle.getString("title"));
         mTextTitle.setText(bundle.getString("title"));
         mEditText.setText(bundle.getString("value"));
     }
@@ -44,8 +43,9 @@ public class EditProfileActivity extends SimpleActivity {
         mGoBack.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditProfileActivity.this,ProfileActivity.class);
-                startActivity(intent);
+               /* Intent intent = new Intent(EditProfileActivity.this,ProfileActivity.class);
+                startActivity(intent);*/
+               finish();
             }
         });
     }

@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:text="@string/edit_profile"
-            android:textSize="20sp"
+            android:textSize="18sp"
             />
     </LinearLayout>
 
@@ -57,6 +57,6 @@
         android:gravity="right"
         android:text="@string/save"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
 </RelativeLayout>

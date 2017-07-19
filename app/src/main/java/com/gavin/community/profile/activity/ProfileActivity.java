@@ -1,10 +1,6 @@
 package com.gavin.community.profile.activity;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,9 +17,9 @@ import butterknife.BindView;
 
 public class ProfileActivity extends SimpleActivity {
 
-    private Context mContext;
-    private ImageView mToolBarBack;
 
+    @BindView(R.id.toolbar_back)
+    ImageView mToolBarBack;
     @BindView(R.id.name)
     LinearLayout mNameLayout;
     @BindView(R.id.work)
@@ -46,16 +42,13 @@ public class ProfileActivity extends SimpleActivity {
     TextView textSite;
 
 
-    private String name;
-    protected String city;
-
-
     protected  int getLayout()
     {
         return R.layout.fragement_profile;
     }
-    protected  void initEventAndData(){
 
+
+    protected void initEventAndData(){
         prepareView();
         initListener();
     }
