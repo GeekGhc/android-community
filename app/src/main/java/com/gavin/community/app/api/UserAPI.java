@@ -3,6 +3,7 @@ package com.gavin.community.app.api;
 import com.gavin.community.app.http.response.UserHttpResponse;
 import com.gavin.community.common.entity.User;
 import com.gavin.community.mvp.model.bean.TestData;
+import com.gavin.community.mvp.model.bean.UserBean;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -12,10 +13,11 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface UserAPI {
 
-    String HOST = "http://10.0.3.2:8000/api/";
+    String HOST = "http://10.0.3.2:8000/api/user/";
 
     /**
      * 用户的基本信息
@@ -31,14 +33,14 @@ public interface UserAPI {
      * 用户注册
      */
     @FormUrlEncoded
-    @POST("user/register")
-    Observable<UserHttpResponse> register(@Field("email") String email, @Field("name") String name, @Field("password") String password);
+    @POST("register")
+    Flowable<UserHttpResponse<User>> register(@Field("email") String email, @Field("name") String name, @Field("password") String password);
 
     /**
      * 用户登录
      */
     @FormUrlEncoded
-    @POST("user/login")
-    Observable<UserHttpResponse> register(@Field("email") String email,@Field("password") String password);
+    @POST("login")
+    Flowable<UserHttpResponse<User>> login(@Field("email") String email, @Field("password") String password);
 
 }

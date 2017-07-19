@@ -1,86 +1,88 @@
 package com.gavin.community.common.entity;
 
 
-
 public class User {
-
     /**
      * 用户ID（int64）
      */
-    public String id;
+    private String id;
 
     /**
      * 用户昵称
      */
-    public String name;
+    private String name;
 
     /**
      * 用户头像
      */
 
-    public String avatar;
+    private String avatar;
 
     /**
      * 用户所在省级ID
      */
-    public String province;
+    private String province;
 
     /**
      * 用户所在城市ID
      */
-    public String city;
+    private String city;
     /**
      * 用户个人描述
      */
-    public String description;
+    private String description;
     /**
      * 用户博客地址
      */
-    public String site;
+    private String site;
     /**
      * 用户的个性化背景(手机)
      */
-    public String cover_image;
+    private String coverImage;
     /**
      * 用户的个性化域名
      */
-    public String domain;
+    private String domain;
     /**
      * 性别，m：男、f：女、n：未知
      */
-    public String gender;
+    private String gender;
     /**
      * 粉丝数
      */
-    public String followers_count;
+    private String followersCount;
     /**
      * 关注数
      */
-    public String followings_count;
+    private String followingsCount;
     /**
      * 帖子数
      */
-    public String posts_count;
+    private String postsCount;
     /**
      * 文章数
      */
-    public String articles_count;
+    private String articlesCount;
     /**
      * 评论数
      */
-    public String comments_count;
+    private String commentsCount;
     /**
      * 收藏数
      */
-    public String favourites_count;
+    private String favouritesCount;
+
     /**
+
      * 用户创建（注册）时间
      */
-    public String created_at;
+    private String createdAt;
     /**
      * 用户经验值
      */
-    public String ex_points;
+    private String exPoints;
+
+
 
     public String getId() {
         return id;
@@ -138,12 +140,12 @@ public class User {
         this.site = site;
     }
 
-    public String getCover_image() {
-        return cover_image;
+    public String getCoverImage() {
+        return coverImage;
     }
 
-    public void setCover_image(String cover_image) {
-        this.cover_image = cover_image;
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
     }
 
     public String getDomain() {
@@ -162,68 +164,68 @@ public class User {
         this.gender = gender;
     }
 
-    public String getFollowers_count() {
-        return followers_count;
+    public String getFollowersCount() {
+        return followersCount;
     }
 
-    public void setFollowers_count(String followers_count) {
-        this.followers_count = followers_count;
+    public void setFollowersCount(String followersCount) {
+        this.followersCount = followersCount;
     }
 
-    public String getFollowings_count() {
-        return followings_count;
+    public String getFollowingsCount() {
+        return followingsCount;
     }
 
-    public void setFollowings_count(String followings_count) {
-        this.followings_count = followings_count;
+    public void setFollowingsCount(String followingsCount) {
+        this.followingsCount = followingsCount;
     }
 
-    public String getPosts_count() {
-        return posts_count;
+    public String getPostsCount() {
+        return postsCount;
     }
 
-    public void setPosts_count(String posts_count) {
-        this.posts_count = posts_count;
+    public void setPostsCount(String postsCount) {
+        this.postsCount = postsCount;
     }
 
-    public String getArticles_count() {
-        return articles_count;
+    public String getArticlesCount() {
+        return articlesCount;
     }
 
-    public void setArticles_count(String articles_count) {
-        this.articles_count = articles_count;
+    public void setArticlesCount(String articlesCount) {
+        this.articlesCount = articlesCount;
     }
 
-    public String getComments_count() {
-        return comments_count;
+    public String getCommentsCount() {
+        return commentsCount;
     }
 
-    public void setComments_count(String comments_count) {
-        this.comments_count = comments_count;
+    public void setCommentsCount(String commentsCount) {
+        this.commentsCount = commentsCount;
     }
 
-    public String getFavourites_count() {
-        return favourites_count;
+    public String getFavouritesCount() {
+        return favouritesCount;
     }
 
-    public void setFavourites_count(String favourites_count) {
-        this.favourites_count = favourites_count;
+    public void setFavouritesCount(String favouritesCount) {
+        this.favouritesCount = favouritesCount;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getEx_points() {
-        return ex_points;
+    public String getExPoints() {
+        return exPoints;
     }
 
-    public void setEx_points(String ex_points) {
-        this.ex_points = ex_points;
+    public void setExPoints(String exPoints) {
+        this.exPoints = exPoints;
     }
 
 }

@@ -3,6 +3,7 @@
 
     <dimen name="post_image_size">54dp</dimen>
     <dimen name="post_icon_size">16dp</dimen>
-    <dimen name="content_padding">6dp</dimen>
+    <dimen name="toast_padding_1">4dp</dimen>
+    <dimen name="toast_padding_2">28dp</dimen>
     <dimen name="tech_icon_size">32dp</dimen>
 </resources>

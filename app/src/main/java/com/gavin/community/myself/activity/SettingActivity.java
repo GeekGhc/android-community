@@ -1,14 +1,18 @@
 package com.gavin.community.myself.activity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.gavin.community.R;
+import com.gavin.community.mvp.ui.activity.MainActivity;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -42,7 +46,11 @@ public class SettingActivity extends AppCompatActivity {
                         .setCancelable(false)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
+                                SharedPreferences setUser = getSharedPreferences("user", Activity.MODE_PRIVATE);
+                                setUser.edit().putString("userId","").commit();
+                                setUser.edit().putString("name","").commit();
+                                Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+                                startActivity(intent);
 
                             }
                         })

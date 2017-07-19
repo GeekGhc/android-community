@@ -1,0 +1,23 @@
+
+                /*String url = "http://10.0.3.2:8000/api/";
+                String name = "geekghc";
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(url)
+                        //增加返回值为String的支持
+                        .addConverterFactory(ScalarsConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                        .build();
+                UserAPI userAPI = retrofit.create(UserAPI.class);
+                Call<TestData>call = userAPI.getData(name);
+                call.enqueue(new Callback<TestData>() {
+                    @Override
+                    public void onResponse(Call<TestData> call, Response<TestData> response) {
+                        String name = response.body().getName();
+                        ToastUtil.show("name = "+name);
+                    }
+                    @Override
+                    public void onFailure(Call<TestData> call, Throwable t) {
+                        ToastUtil.show("failed = "+t.toString());
+                    }
+                });*/

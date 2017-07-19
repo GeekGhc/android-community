@@ -47,6 +47,7 @@
                         android:padding="18dp">
 
                         <TextView
+                            android:id="@+id/user_name"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -235,6 +236,7 @@
                             android:src="@mipmap/ic_user_articles" />
 
                         <TextView
+                            android:id="@+id/user_article_count"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="6dp"

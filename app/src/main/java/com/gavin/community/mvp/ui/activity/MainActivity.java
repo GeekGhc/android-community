@@ -1,7 +1,10 @@
 package com.gavin.community.mvp.ui.activity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.Nullable;
@@ -27,8 +30,10 @@ import com.gavin.community.discover.fragment.DiscoverFragment;
 import com.gavin.community.home.post.fragment.PostSwipeActivity;
 import com.gavin.community.message.fragment.MessageFragment;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
+import com.gavin.community.myself.activity.LoginActivity;
 import com.gavin.community.myself.fragment.MySelfFragment;
 import com.gavin.community.utils.StatusBarUtils;
+import com.gavin.community.utils.ToastUtil;
 
 import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -74,7 +79,7 @@ public class MainActivity extends SimpleActivity {
     @Override
     protected void initEventAndData() {
         StatusBarUtils.fixTopView(MainActivity.this);
-        StatusBarUtils.setWindowStatusBarColor(MainActivity.this,R.color.colorPrimaryDark);
+        StatusBarUtils.setWindowStatusBarColor(MainActivity.this, R.color.colorPrimaryDark);
         prepareView();
         initData();
         initView();
@@ -87,22 +92,19 @@ public class MainActivity extends SimpleActivity {
     }
 
     //初始化数据
-    private void initData()
-    {
+    private void initData() {
 
     }
 
     //初始化视图
-    private void initView()
-    {
+    private void initView() {
         mBarManager = new BarManager();
 //        mBarManager.showBottomBar(mButtonBarLl);
         mFragmentManager = getSupportFragmentManager();
     }
 
     //初始化监听器
-    private void initListener()
-    {
+    private void initListener() {
         mHomeTabRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,14 +114,25 @@ public class MainActivity extends SimpleActivity {
         mMessageTabRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setTabFragment(TAB_MESSAGE_FRAGMENT);
+                if(isLogin()){
+                    setTabFragment(TAB_MESSAGE_FRAGMENT);
+                }else{
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         mPostTabIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PostSwipeActivity.class);
-                startActivity(intent);
+                if (isLogin()) {
+                    Intent intent = new Intent(MainActivity.this, PostSwipeActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
         mDiscoverTabRl.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +144,12 @@ public class MainActivity extends SimpleActivity {
         mMySelfTabRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setTabFragment(TAB_PROFILE_FRAGMENT);
+                if(isLogin()){
+                    setTabFragment(TAB_PROFILE_FRAGMENT);
+                }else {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -230,6 +248,16 @@ public class MainActivity extends SimpleActivity {
         }
     }
 
+    /**
+     * 判断用户是否的登录
+     */
+    private boolean isLogin() {
+        SharedPreferences getUser = getSharedPreferences("user",Activity.MODE_PRIVATE);
+        if (getUser.getString("name", "").length() > 0) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * 显示指定的fragment，并且把对应的导航栏的icon设置成高亮状态
