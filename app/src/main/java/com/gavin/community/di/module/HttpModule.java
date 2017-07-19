@@ -2,9 +2,11 @@ package com.gavin.community.di.module;
 
 
 import com.gavin.community.app.Constants;
+import com.gavin.community.app.api.ArticleAPI;
 import com.gavin.community.app.api.GankApis;
 import com.gavin.community.app.api.PostAPI;
 import com.gavin.community.app.api.UserAPI;
+import com.gavin.community.di.qualifier.ArticleUrl;
 import com.gavin.community.di.qualifier.GankUrl;
 import com.gavin.community.utils.SystemUtil;
 
@@ -58,6 +60,14 @@ public class HttpModule {
         builder = this.provideRetrofitBuilder();
         client = this.provideOkHttpBuilder().build();
         return createRetrofit(builder, client, PostAPI.HOST);
+    }
+
+    @Provides
+    @ArticleUrl
+    public Retrofit provideArticleRetrofit(Retrofit.Builder builder, OkHttpClient client) {
+        builder = this.provideRetrofitBuilder();
+        client = this.provideOkHttpBuilder().build();
+        return createRetrofit(builder, client, ArticleAPI.HOST);
     }
 
     @Provides

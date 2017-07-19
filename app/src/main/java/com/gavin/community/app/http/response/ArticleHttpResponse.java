@@ -5,6 +5,7 @@ package com.gavin.community.app.http.response;
  */
 
 public class ArticleHttpResponse<T> {
+
     private int code;
     private String message;
     private T data;

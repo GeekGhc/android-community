@@ -7,9 +7,11 @@ package com.gavin.community.mvp.model.bean;
 public class ArticleItemBean {
     private String id;
     private String title;
-    private String createdAt;
     private String author;
     private String viewCount;
+    private String starCount;
+    private String commentCount;
+    private String createdAt;
 
     public String getId() {
         return id;
@@ -67,6 +69,4 @@ public class ArticleItemBean {
         this.commentCount = commentCount;
     }
 
-    private String starCount;
-    private String commentCount;
 }

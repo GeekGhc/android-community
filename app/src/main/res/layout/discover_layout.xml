@@ -26,6 +26,43 @@
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+           <include layout="@layout/discover_bar"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:padding="12dp"
+               android:orientation="horizontal"
+               android:background="@color/white"
+               >
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/discover_hot_sm"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="4dp"
+                   android:text="热门文章"
+                   />
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                >
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/view_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
