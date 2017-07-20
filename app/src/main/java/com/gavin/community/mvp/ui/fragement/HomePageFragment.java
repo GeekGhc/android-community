@@ -19,6 +19,7 @@ import com.gavin.community.common.base.RootFragment;
 import com.gavin.community.common.base.SimpleFragment;
 import com.gavin.community.common.base.contract.post.PostContract;
 import com.gavin.community.component.ImageLoader;
+import com.gavin.community.home.activity.PostDetailActivity;
 import com.gavin.community.home.activity.TechDetailActivity;
 import com.gavin.community.mvp.adapter.HomeAdapter;
 import com.gavin.community.mvp.adapter.HomePageAdapter;
@@ -67,7 +68,7 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         mList = new ArrayList<>();
         mPagePresenter = new HomePagePresenter();
         mPagePresenter.onTakeView(this);
-        mPagePresenter.getPostData(tech,type);
+        mPagePresenter.getPostData(tech, type);
         tech = getArguments().getString(Constants.IT_TYPE);
         type = getArguments().getInt(Constants.IT_TYPE_CODE);
         rvTechContent.setLayoutManager(new LinearLayoutManager(mContext));
@@ -76,7 +77,21 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         mAdapter.setOnItemClickListener(new MyPagerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View shareView) {
-
+                PostDetailActivity.launch(new PostDetailActivity.Builder()
+                        .setContext(mContext)
+                        .setId(mList.get(position).getId())
+                        .setTitle(mList.get(position).getTitle())
+                        .setBody(mList.get(position).getBody())
+                        .setType(type)
+                        .setUserName(mList.get(position).getAuthor())
+                        .setUserAvatar("avatar")
+                        .setStarCount("23")
+                        .setCommentCount("56")
+                        .setFavoriteCount("12")
+                        .setIsFavorite("true")
+                        .setAnimConfig(mActivity, shareView)
+                );
+//                ToastUtil.show("body = " + mList.get(position).getAuthor());
             }
         });
         rvTechContent.setAdapter(mAdapter);
@@ -115,7 +130,7 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mPagePresenter.getPostData(tech,type);
+                mPagePresenter.getPostData(tech, type);
             }
         });
 

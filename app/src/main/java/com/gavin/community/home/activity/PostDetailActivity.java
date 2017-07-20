@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,18 +15,14 @@ import android.widget.TextView;
 
 import com.gavin.community.R;
 
+import com.gavin.community.app.Constants;
 import com.gavin.community.common.base.SimpleActivity;
-
-import org.w3c.dom.Text;
+import com.gavin.community.utils.SystemUtil;
+import com.gavin.community.utils.ToastUtil;
 
 import butterknife.BindView;
 
 public class PostDetailActivity extends SimpleActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @BindView(R.id.tool_bar)
     Toolbar toolBar;
@@ -41,7 +35,7 @@ public class PostDetailActivity extends SimpleActivity {
     @BindView(R.id.post_body)
     TextView tvPostBody;
 
-    String title, body, id;
+    String id, title, body, userName, userAvatar, commentCount, starCount,favoriteCount,isFavorite;
     int type;
     boolean isLiked;
     MenuItem menuItem;
@@ -53,6 +47,18 @@ public class PostDetailActivity extends SimpleActivity {
 
     @Override
     protected void initEventAndData() {
+        Intent intent = getIntent();
+        id = intent.getExtras().getString(Constants.IT_POST_ID);
+        type = intent.getExtras().getInt(Constants.IT_POST_TYPE);
+        title = intent.getExtras().getString(Constants.IT_POST_TITLE);
+        body = intent.getExtras().getString(Constants.IT_POST_BODY);
+        userName = intent.getExtras().getString(Constants.IT_POST_USER_NAME);
+        userAvatar = intent.getExtras().getString(Constants.IT_POST_USER_AVATAR);
+        isFavorite = intent.getExtras().getString(Constants.IT_POST_IS_FAVORITE);
+        commentCount = intent.getExtras().getString(Constants.IT_POST_COMMENT_COUNT);
+        favoriteCount = intent.getExtras().getString(Constants.IT_POST_FAVORITE_COUNT);
+        starCount = intent.getExtras().getString(Constants.IT_POST_STAR_COUNT);
+        setToolBar(toolBar, title);
 
     }
 
@@ -63,6 +69,29 @@ public class PostDetailActivity extends SimpleActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_copy:
+                SystemUtil.copyToClipBoard(mContext, "http://kobeman.com");
+                return true;
+            case R.id.action_share:
+                ToastUtil.show("分享页面。。。。");
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressedSupport() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            pop();
+        } else {
+            finishAfterTransition();
+        }
+    }
+
     //设置是否收藏状态
     private void setLikeState(boolean state) {
 
@@ -70,12 +99,17 @@ public class PostDetailActivity extends SimpleActivity {
 
     public static class Builder {
 
+        private String id;
+        private int type;
         private String title;
         private String body;
-        private String imgUrl;
         private String userName;
         private String userAvatar;
-        private String id;
+        private String commentCount;
+        private String starCount;
+        private String favoriteCount;
+        private String isFavorite;
+
         private View shareView;
         private Context mContext;
         private Activity mActivity;
@@ -114,8 +148,28 @@ public class PostDetailActivity extends SimpleActivity {
             return this;
         }
 
-        public Builder setImgUrl(String imgUrl) {
-            this.imgUrl = imgUrl;
+        public Builder setType(int type) {
+            this.type = type;
+            return this;
+        }
+
+        public Builder setCommentCount(String commentCount) {
+            this.commentCount = commentCount;
+            return this;
+        }
+
+        public Builder setStarCount(String startCount) {
+            this.starCount = startCount;
+            return this;
+        }
+
+        public Builder setFavoriteCount(String favoriteCount) {
+            this.favoriteCount = favoriteCount;
+            return this;
+        }
+
+        public Builder setIsFavorite(String isFavorite) {
+            this.isFavorite = isFavorite;
             return this;
         }
 
@@ -127,26 +181,35 @@ public class PostDetailActivity extends SimpleActivity {
     }
 
     public static void launch(Builder builder) {
-        /*if (builder.shareView != null) {
+        if (builder.shareView != null) {
             Intent intent = new Intent();
-            intent.setClass(builder.mContext, TechDetailActivity.class);
-            intent.putExtra(Constants.IT_GANK_DETAIL_URL, builder.url);
-            intent.putExtra(Constants.IT_GANK_DETAIL_IMG_URL, builder.imgUrl);
-            intent.putExtra(Constants.IT_GANK_DETAIL_TITLE, builder.title);
-            intent.putExtra(Constants.IT_GANK_DETAIL_ID, builder.id);
-            intent.putExtra(Constants.IT_GANK_DETAIL_TYPE, builder.type);
+            intent.setClass(builder.mContext, PostDetailActivity.class);
+            intent.putExtra(Constants.IT_POST_ID, builder.id);
+            intent.putExtra(Constants.IT_POST_TITLE, builder.title);
+            intent.putExtra(Constants.IT_POST_BODY, builder.body);
+            intent.putExtra(Constants.IT_POST_USER_NAME, builder.userName);
+            intent.putExtra(Constants.IT_POST_USER_AVATAR, builder.userAvatar);
+            intent.putExtra(Constants.IT_POST_COMMENT_COUNT, builder.commentCount);
+            intent.putExtra(Constants.IT_POST_FAVORITE_COUNT, builder.favoriteCount);
+            intent.putExtra(Constants.IT_POST_STAR_COUNT, builder.starCount);
+            intent.putExtra(Constants.IT_POST_IS_FAVORITE, builder.isFavorite);
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(builder.mActivity, builder.shareView, "shareView");
             builder.mContext.startActivity(intent,options.toBundle());
+
         } else {
             Intent intent = new Intent();
-            intent.setClass(builder.mContext, TechDetailActivity.class);
-            intent.putExtra(Constants.IT_GANK_DETAIL_URL, builder.url);
-            intent.putExtra(Constants.IT_GANK_DETAIL_IMG_URL, builder.imgUrl);
-            intent.putExtra(Constants.IT_GANK_DETAIL_TITLE, builder.title);
-            intent.putExtra(Constants.IT_GANK_DETAIL_ID, builder.id);
-            intent.putExtra(Constants.IT_GANK_DETAIL_TYPE, builder.type);
+            intent.putExtra(Constants.IT_POST_ID, builder.id);
+            intent.putExtra(Constants.IT_POST_TITLE, builder.title);
+            intent.putExtra(Constants.IT_POST_BODY, builder.body);
+            intent.putExtra(Constants.IT_POST_USER_NAME, builder.userName);
+            intent.putExtra(Constants.IT_POST_USER_AVATAR, builder.userAvatar);
+            intent.putExtra(Constants.IT_POST_COMMENT_COUNT, builder.commentCount);
+            intent.putExtra(Constants.IT_POST_FAVORITE_COUNT, builder.favoriteCount);
+            intent.putExtra(Constants.IT_POST_STAR_COUNT, builder.starCount);
+            intent.putExtra(Constants.IT_POST_IS_FAVORITE, builder.isFavorite);
             builder.mContext.startActivity(intent);
-        }*/
+            ToastUtil.show("no");
+        }
     }
 
 }

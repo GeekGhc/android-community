@@ -1,6 +1,7 @@
 package com.gavin.community.mvp.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MyPagerAdapter extends RecyclerView.Adapter<MyPagerAdapter.MyViewHolder> {
+public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater inflater;
     private List<PostItemBean> mList;
     private MyPagerAdapter.OnItemClickListener onItemClickListener;
@@ -39,26 +40,26 @@ public class MyPagerAdapter extends RecyclerView.Adapter<MyPagerAdapter.MyViewHo
 
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if(tech.equals(HomeFragment.type[0])) {
-            holder.ivImg.setImageResource(R.mipmap.ic_android);
+            ((MyViewHolder)holder).ivImg.setImageResource(R.mipmap.ic_android);
         } else if(tech.equals(HomeFragment.type[1])) {
-           holder.ivImg.setImageResource(R.mipmap.ic_ios);
+            ((MyViewHolder)holder).ivImg.setImageResource(R.mipmap.ic_ios);
         } else if(tech.equals(HomeFragment.type[2])) {
-            holder.ivImg.setImageResource(R.mipmap.ic_web);
+            ((MyViewHolder)holder).ivImg.setImageResource(R.mipmap.ic_web);
         }else if(tech.equals(HomeFragment.type[3])){
-            holder.ivImg.setImageResource(R.mipmap.ic_php);
+            ((MyViewHolder)holder).ivImg.setImageResource(R.mipmap.ic_php);
         }
-        holder.tvAuthor.setText(mList.get(position).getAuthor());
-        holder.tvTitle.setText(mList.get(position).getTitle());
-        holder.tvComment.setText(mList.get(position).getCommentCount());
-        holder.tvTime.setText(mList.get(position).getCreatedAt());
+        ((MyViewHolder)holder).tvAuthor.setText(mList.get(position).getAuthor());
+        ((MyViewHolder)holder).tvTitle.setText(mList.get(position).getTitle());
+        ((MyViewHolder)holder).tvComment.setText(mList.get(position).getCommentCount());
+        ((MyViewHolder)holder).tvTime.setText(mList.get(position).getCreatedAt());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(onItemClickListener != null) {
-                    /*CardView cv = (CardView) view.findViewById(R.id.cv_post_content);
-                    onItemClickListener.onItemClick(holder.getAdapterPosition(),cv);*/
+                    CardView cv = (CardView) view.findViewById(R.id.cv_post_content);
+                    onItemClickListener.onItemClick(holder.getAdapterPosition(),cv);
                 }
             }
         });

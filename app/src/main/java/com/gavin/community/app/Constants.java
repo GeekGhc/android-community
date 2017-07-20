@@ -34,4 +34,16 @@ public class Constants {
     public static final String PATH_DATA = App.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";
 
     public static final String PATH_CACHE = PATH_DATA + "/NetCache";
+
+    //================= POST ====================
+    public static final String IT_POST_ID= "post_id";
+    public static final String IT_POST_TYPE = "post_type";
+    public static final String IT_POST_TITLE = "post_title";
+    public static final String IT_POST_BODY = "post_body";
+    public static final String IT_POST_IS_FAVORITE = "post_is_favorite";
+    public static final String IT_POST_USER_NAME = "post_user_name";
+    public static final String IT_POST_USER_AVATAR = "post_user_avatar";
+    public static final String IT_POST_COMMENT_COUNT = "post_comment_count";
+    public static final String IT_POST_FAVORITE_COUNT = "post_favorite_count";
+    public static final String IT_POST_STAR_COUNT = "post_star_count";
 }

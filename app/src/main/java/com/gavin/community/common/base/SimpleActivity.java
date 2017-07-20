@@ -38,6 +38,10 @@ public abstract class SimpleActivity extends SupportActivity {
         });
     }
 
+    protected void onViewCreated() {
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

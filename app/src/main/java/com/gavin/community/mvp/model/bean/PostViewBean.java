@@ -1,18 +1,30 @@
 package com.gavin.community.mvp.model.bean;
 
 /**
- * Created by Administrator on 2017/7/13.
+ * Created by Administrator on 2017/7/20.
  */
 
-public class PostItemBean {
+public class PostViewBean {
 
     private String id;
     private String title;
-    private String createdAt;
     private String author;
-    private String body;
+    private String userAvatar;
     private String viewCount;
     private String commentCount;
+    private String starCount;
+    private String isFavorite;
+    private String createdAt;
+    private String updatedAt;
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 
     public String getId() {
         return id;
@@ -28,14 +40,6 @@ public class PostItemBean {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
     }
 
     public String getCreatedAt() {
@@ -54,6 +58,14 @@ public class PostItemBean {
         this.author = author;
     }
 
+    public String getUserAvatar() {
+        return userAvatar;
+    }
+
+    public void setUserAvatar(String userAvatar) {
+        this.userAvatar = userAvatar;
+    }
+
     public String getViewCount() {
         return viewCount;
     }
@@ -68,5 +80,21 @@ public class PostItemBean {
 
     public void setCommentCount(String commentCount) {
         this.commentCount = commentCount;
+    }
+
+    public String getStarCount() {
+        return starCount;
+    }
+
+    public void setStarCount(String starCount) {
+        this.starCount = starCount;
+    }
+
+    public String getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(String isFavorite) {
+        this.isFavorite = isFavorite;
     }
 }
