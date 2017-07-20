@@ -5,11 +5,11 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +17,7 @@ import com.gavin.community.R;
 
 import com.gavin.community.app.Constants;
 import com.gavin.community.common.base.SimpleActivity;
+import com.gavin.community.mvp.ui.activity.MainActivity;
 import com.gavin.community.utils.SystemUtil;
 import com.gavin.community.utils.ToastUtil;
 
@@ -24,18 +25,20 @@ import butterknife.BindView;
 
 public class PostDetailActivity extends SimpleActivity {
 
-    @BindView(R.id.tool_bar)
+    @BindView(R.id.post_view_toolbar)
     Toolbar toolBar;
     @BindView(R.id.post_title)
     TextView tvPostTitle;
-    @BindView(R.id.post_user_avatar)
-    ImageView ivUserAvatar;
+    /*@BindView(R.id.post_user_avatar)
+    ImageView ivUserAvatar;*/
     @BindView(R.id.post_user_name)
     TextView tvUserName;
     @BindView(R.id.post_body)
     TextView tvPostBody;
+    @BindView(R.id.detail_bar_image)
+    ImageView ivBarImg;
 
-    String id, title, body, userName, userAvatar, commentCount, starCount,favoriteCount,isFavorite;
+    String id, title, body, userName, userAvatar, commentCount, starCount, favoriteCount, isFavorite;
     int type;
     boolean isLiked;
     MenuItem menuItem;
@@ -58,7 +61,19 @@ public class PostDetailActivity extends SimpleActivity {
         commentCount = intent.getExtras().getString(Constants.IT_POST_COMMENT_COUNT);
         favoriteCount = intent.getExtras().getString(Constants.IT_POST_FAVORITE_COUNT);
         starCount = intent.getExtras().getString(Constants.IT_POST_STAR_COUNT);
-        setToolBar(toolBar, title);
+        setToolBar(toolBar, userName);
+        tvUserName.setText(userName);
+        tvPostTitle.setText(title);
+        tvPostBody.setText(body);
+        if(type == Constants.TYPE_ANDROID){
+            ivBarImg.setImageResource(R.drawable.bg_android);
+        }else if(type==Constants.TYPE_IOS){
+            ivBarImg.setImageResource(R.drawable.bg_ios);
+        }else if(type==Constants.TYPE_FRONT){
+            ivBarImg.setImageResource(R.drawable.bg_js);
+        }else if(type==Constants.TYPE_BACK){
+            ivBarImg.setImageResource(R.drawable.bg_other);
+        }
 
     }
 
@@ -185,6 +200,7 @@ public class PostDetailActivity extends SimpleActivity {
             Intent intent = new Intent();
             intent.setClass(builder.mContext, PostDetailActivity.class);
             intent.putExtra(Constants.IT_POST_ID, builder.id);
+            intent.putExtra(Constants.IT_POST_TYPE, builder.type);
             intent.putExtra(Constants.IT_POST_TITLE, builder.title);
             intent.putExtra(Constants.IT_POST_BODY, builder.body);
             intent.putExtra(Constants.IT_POST_USER_NAME, builder.userName);
@@ -195,9 +211,9 @@ public class PostDetailActivity extends SimpleActivity {
             intent.putExtra(Constants.IT_POST_IS_FAVORITE, builder.isFavorite);
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(builder.mActivity, builder.shareView, "shareView");
             builder.mContext.startActivity(intent,options.toBundle());
-
         } else {
             Intent intent = new Intent();
+            intent.setClass(builder.mContext, PostDetailActivity.class);
             intent.putExtra(Constants.IT_POST_ID, builder.id);
             intent.putExtra(Constants.IT_POST_TITLE, builder.title);
             intent.putExtra(Constants.IT_POST_BODY, builder.body);
@@ -208,7 +224,6 @@ public class PostDetailActivity extends SimpleActivity {
             intent.putExtra(Constants.IT_POST_STAR_COUNT, builder.starCount);
             intent.putExtra(Constants.IT_POST_IS_FAVORITE, builder.isFavorite);
             builder.mContext.startActivity(intent);
-            ToastUtil.show("no");
         }
     }
 

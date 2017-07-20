@@ -100,7 +100,7 @@ public class HomeFragment extends SimpleFragment {
         mMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.show("啊哈哈哈");
+                ToastUtil.show("正在开发中");
             }
         });
     }
