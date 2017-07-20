@@ -6,4 +6,6 @@
     <dimen name="toast_padding_1">4dp</dimen>
     <dimen name="toast_padding_2">28dp</dimen>
     <dimen name="tech_icon_size">32dp</dimen>
+    <dimen name="detail_bottom_height">50dp</dimen>
+    <dimen name="post_image_height">160dp</dimen>
 </resources>

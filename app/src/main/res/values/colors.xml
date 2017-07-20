@@ -14,6 +14,7 @@
     <color name="user_panel_color">#abb8c2</color>
     <color name="common_text">#b2bac2</color>
     <color name="comment_reply">#9ba4a3</color>
+    <color name="bottom_text">#a9a9a9</color>
 
     <color name="white">#FFFFFF</color><!--白色 -->
     <color name="orange">#FFA500</color><!--橙色 -->
