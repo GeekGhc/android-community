@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface ArticleAPI {
 
-    String HOST = "http://kobeman.com/api/article/";
+    String HOST = "http://kobeman.com/api/articles/";
 
     @GET("hot/list")
     Flowable<ArticleHttpResponse<List<ArticleItemBean>>> getHotList(@Query("type") String name, @Query("limit") int limit);

@@ -124,9 +124,7 @@ public class LoginActivity extends SimpleActivity {
                             public void onNext(UserHttpResponse<User> userHttpResponse) {
                                 if(userHttpResponse.getCode()==1){
                                     cUser = userHttpResponse.getData();
-                                    ToastUtil.show("data = " + userHttpResponse.getMessage());
                                     SharedPreferences setUser = getSharedPreferences("user",Activity.MODE_PRIVATE);
-                                    ToastUtil.show("user name1 = "+cUser.getName());
                                     setUser.edit().putString("userId",cUser.getId()).commit();
                                     setUser.edit().putString("name",cUser.getName()).commit();
 

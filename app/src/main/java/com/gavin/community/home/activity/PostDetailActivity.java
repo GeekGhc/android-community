@@ -18,6 +18,8 @@ import com.gavin.community.R;
 import com.gavin.community.app.Constants;
 import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.mvp.ui.activity.MainActivity;
+import com.gavin.community.myself.activity.LoginActivity;
+import com.gavin.community.myself.activity.ResetPwdActivity;
 import com.gavin.community.utils.SystemUtil;
 import com.gavin.community.utils.ToastUtil;
 
@@ -37,10 +39,19 @@ public class PostDetailActivity extends SimpleActivity {
     TextView tvPostBody;
     @BindView(R.id.detail_bar_image)
     ImageView ivBarImg;
+    @BindView(R.id.post_comment_count)
+    TextView tvCommentCount;
+    @BindView(R.id.post_star_count)
+    TextView tvStarCount;
+    @BindView(R.id.post_star)
+    ImageView ivPostStar;
+    @BindView(R.id.post_zan)
+    ImageView ivPostZan;
 
     String id, title, body, userName, userAvatar, commentCount, starCount, favoriteCount, isFavorite;
     int type;
-    boolean isLiked;
+    boolean isZan;
+    boolean isStar;
     MenuItem menuItem;
 
     @Override
@@ -65,16 +76,52 @@ public class PostDetailActivity extends SimpleActivity {
         tvUserName.setText(userName);
         tvPostTitle.setText(title);
         tvPostBody.setText(body);
-        if(type == Constants.TYPE_ANDROID){
+        tvCommentCount.setText(commentCount);
+        if (type == Constants.TYPE_ANDROID) {
             ivBarImg.setImageResource(R.drawable.bg_android);
-        }else if(type==Constants.TYPE_IOS){
+        } else if (type == Constants.TYPE_IOS) {
             ivBarImg.setImageResource(R.drawable.bg_ios);
-        }else if(type==Constants.TYPE_FRONT){
+        } else if (type == Constants.TYPE_FRONT) {
             ivBarImg.setImageResource(R.drawable.bg_js);
-        }else if(type==Constants.TYPE_BACK){
+        } else if (type == Constants.TYPE_BACK) {
             ivBarImg.setImageResource(R.drawable.bg_other);
         }
+        initData();
+        setListener();
+    }
 
+    private void initData()
+    {
+        this.isZan = false;
+        this.isStar = false;
+    }
+
+    //设置一些监听事件
+    private void setListener()
+    {
+        ivPostZan.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+               isZan = !isZan;
+                if(isZan){
+                    ivPostZan.setImageResource(R.mipmap.ic_zaned);
+                }else{
+                    ivPostZan.setImageResource(R.mipmap.ic_zan);
+                }
+            }
+        });
+
+        ivPostStar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isStar = !isStar;
+                if(isStar){
+                    ivPostStar.setImageResource(R.mipmap.ic_like);
+                }else{
+                    ivPostStar.setImageResource(R.mipmap.ic_liked);
+                }
+            }
+        });
     }
 
     @Override
@@ -210,7 +257,7 @@ public class PostDetailActivity extends SimpleActivity {
             intent.putExtra(Constants.IT_POST_STAR_COUNT, builder.starCount);
             intent.putExtra(Constants.IT_POST_IS_FAVORITE, builder.isFavorite);
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(builder.mActivity, builder.shareView, "shareView");
-            builder.mContext.startActivity(intent,options.toBundle());
+            builder.mContext.startActivity(intent, options.toBundle());
         } else {
             Intent intent = new Intent();
             intent.setClass(builder.mContext, PostDetailActivity.class);

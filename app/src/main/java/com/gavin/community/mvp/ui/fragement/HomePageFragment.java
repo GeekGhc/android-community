@@ -20,7 +20,6 @@ import com.gavin.community.common.base.SimpleFragment;
 import com.gavin.community.common.base.contract.post.PostContract;
 import com.gavin.community.component.ImageLoader;
 import com.gavin.community.home.activity.PostDetailActivity;
-import com.gavin.community.home.activity.TechDetailActivity;
 import com.gavin.community.mvp.adapter.HomeAdapter;
 import com.gavin.community.mvp.adapter.HomePageAdapter;
 import com.gavin.community.mvp.adapter.MyPagerAdapter;
@@ -86,7 +85,7 @@ public class HomePageFragment extends SimpleFragment implements PostContract.Vie
                         .setUserName(mList.get(position).getAuthor())
                         .setUserAvatar("avatar")
                         .setStarCount("23")
-                        .setCommentCount("56")
+                        .setCommentCount(mList.get(position).getCommentCount())
                         .setFavoriteCount("12")
                         .setIsFavorite("true")
                         .setAnimConfig(mActivity, shareView)

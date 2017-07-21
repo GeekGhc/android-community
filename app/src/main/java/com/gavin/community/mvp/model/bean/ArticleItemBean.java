@@ -8,10 +8,47 @@ public class ArticleItemBean {
     private String id;
     private String title;
     private String author;
+    private String avatar;
     private String viewCount;
     private String starCount;
     private String commentCount;
+    private String favoriteCount;
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getFavoriteCount() {
+        return favoriteCount;
+    }
+
+    public void setFavoriteCount(String favoriteCount) {
+        this.favoriteCount = favoriteCount;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(String isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
     private String createdAt;
+    private String updatedAt;
+    private String isFavorite;
 
     public String getId() {
         return id;

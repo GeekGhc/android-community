@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/post_view_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_collapseMode="pin"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -46,7 +39,16 @@
                     android:background="@drawable/bg_ios"
                     android:scaleType="centerCrop" />
             </FrameLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/post_view_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ToolbarTheme"
+                app:titleTextAppearance="@style/ToolbarTitle"
+                app:popupTheme="@style/Theme.AppCompat.NoActionBar"/>
         </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -55,6 +57,7 @@
         android:layout_height="match_parent"
         android:overScrollMode="never"
         android:scrollbars="vertical"
+        android:background="@color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -96,6 +99,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:text="JellyBean"/>
+                <TextView
+                    android:id="@+id/post_create_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="3个小时前"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -117,89 +128,6 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <FrameLayout
-        android:id="@+id/ll_detail_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/detail_bottom_height"
-        android:layout_gravity="bottom"
-        android:background="@android:color/white">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="6dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_like" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_comment" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@mipmap/ic_share" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="10dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
-                    android:text="喜欢"
-                    android:textColor="@color/bottom_text" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="56"
-                    android:textColor="@color/bottom_text" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="4dp"
-                    android:text="评论"
-                    android:textColor="@color/bottom_text" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12"
-                    android:textColor="@color/bottom_text" />
-
-            </LinearLayout>
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="top"
-            android:background="#e8e8e8" />
-    </FrameLayout>
+   <include layout="@layout/post_footer"/>
 
 </android.support.design.widget.CoordinatorLayout>
