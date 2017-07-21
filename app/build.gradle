@@ -13,6 +13,10 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [
+                //  替换成你的qq_id
+                qq_id: "1106243600"
+        ]
     }
 
     buildTypes {
@@ -54,6 +58,7 @@ dependencies {
     compile rootProject.ext.dependencies["PhotoView"]
     compile rootProject.ext.dependencies["glide-transformations"]
     compile rootProject.ext.dependencies["html-textview"]
+    compile rootProject.ext.dependencies["SwitchButton"]
 
     //rx
     compile rootProject.ext.dependencies["rxjava"]

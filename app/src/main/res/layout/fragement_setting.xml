@@ -175,14 +175,11 @@
                             android:textColor="@color/setting_black"
                             android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="Jenny葛"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
+                        <com.suke.widget.SwitchButton
+                            android:id="@+id/switch_weibo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
 
                     </LinearLayout>
                 </LinearLayout>
@@ -217,20 +214,10 @@
                             android:textColor="@color/setting_black"
                             android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="已关闭"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-
-                        <ImageView
+                        <com.suke.widget.SwitchButton
+                            android:id="@+id/switch_button"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:src="@mipmap/ic_action_right" />
+                            android:layout_height="wrap_content"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -264,14 +251,11 @@
                         android:textColor="@color/setting_black"
                         android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="GeekGhc"
-                        android:textColor="@color/common_text"
-                        android:textSize="18sp" />
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/switch_github"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -355,20 +339,11 @@
                             android:textColor="@color/setting_black"
                             android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="已关闭"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-
-                        <ImageView
+                        <com.suke.widget.SwitchButton
+                            android:id="@+id/switch_notification"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:src="@mipmap/ic_action_right" />
+                            android:layout_height="wrap_content"/>
+
                     </LinearLayout>
                 </LinearLayout>
 
