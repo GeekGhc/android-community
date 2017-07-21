@@ -82,6 +82,7 @@ dependencies {
     //other
     compile rootProject.ext.dependencies["fragmentation"]
     compile rootProject.ext.dependencies["RecyclerViewBanner"]
+//    compile rootProject.ext.dependencies["shareutil"]
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'
