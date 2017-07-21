@@ -18,7 +18,7 @@ import retrofit2.http.Query;
 
 public interface UserAPI {
 
-    String HOST = "http://10.0.3.2:8000/api/user/";
+    String HOST = "http://kobeman.com/api/user/";
 
     /**
      * 用户的基本信息

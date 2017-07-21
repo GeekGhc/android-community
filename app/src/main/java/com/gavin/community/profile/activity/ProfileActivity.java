@@ -113,7 +113,6 @@ public class ProfileActivity extends SimpleActivity {
                         }
                     }
                 });
-        ToastUtil.show("user = " + cUser);
     }
 
 

@@ -18,7 +18,7 @@ import retrofit2.http.Query;
 
 public interface PostAPI {
 
-    String HOST = "http://10.0.3.2:8000/api/posts/";
+    String HOST = "http://kobeman.com/api/posts/";
 
     @GET("list")
     Flowable<PostHttpResponse<List<PostItemBean>>> getPostList(@Query("type") String name, @Query("limit") int limit, @Query("page") int page);

@@ -10,16 +10,15 @@
     <include layout="@layout/toolbar_me" />
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:scrollbars="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:overScrollMode="always"
+        android:scrollbars="vertical">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -240,7 +239,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12篇"
+                            android:text="0篇"
                             android:textColor="@color/user_panel_color"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -288,7 +287,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24篇"
+                            android:text="0篇"
                             android:textColor="@color/user_panel_color"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -336,7 +335,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="36个"
+                            android:text="0个"
                             android:textColor="@color/user_panel_color"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -383,7 +382,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22个"
+                            android:text="0个"
                             android:textColor="@color/user_panel_color"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -437,6 +436,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1sp"
                 android:background="#fff"
+                android:layout_marginBottom="40dp"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="2dp">
 
