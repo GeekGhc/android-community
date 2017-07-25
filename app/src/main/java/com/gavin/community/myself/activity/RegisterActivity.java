@@ -1,7 +1,6 @@
 package com.gavin.community.myself.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.widget.AppCompatButton;
@@ -11,14 +10,10 @@ import android.widget.ImageView;
 
 import com.gavin.community.R;
 import com.gavin.community.app.api.UserAPI;
-import com.gavin.community.app.http.response.PostHttpResponse;
 import com.gavin.community.app.http.response.UserHttpResponse;
 import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.common.entity.User;
 import com.gavin.community.di.module.HttpModule;
-import com.gavin.community.home.post.fragment.PostSwipeActivity;
-import com.gavin.community.mvp.model.bean.PostItemBean;
-import com.gavin.community.mvp.model.bean.UserBean;
 import com.gavin.community.mvp.ui.activity.MainActivity;
 import com.gavin.community.utils.ToastUtil;
 

@@ -47,6 +47,13 @@
     <color name="rl_textcolor">#111111</color>
     <color name="toolbar_color">#24292e</color>
 
+    <!--帖子颜色-->
+    <color name="post_bg">#FFFFFF</color>
+    <color name="post_hint">#808080</color>
+    <color name="post_text">#333333</color>
+    <color name="post_bottomBar_bg">#f9f9f9</color>
+    <color name="blue_500">#FF2196F3</color>
+
     <!--我的关注 -->
     <color name="friend_item_name">#343434</color>
     <color name="friend_item_description">#939393</color>

@@ -8,4 +8,9 @@
     <dimen name="tech_icon_size">32dp</dimen>
     <dimen name="detail_bottom_height">50dp</dimen>
     <dimen name="post_image_height">160dp</dimen>
+
+    <dimen name="bullet_radius">2dp</dimen>
+    <dimen name="bullet_gap_width">8dp</dimen>
+    <dimen name="quote_stripe_width">8dp</dimen>
+    <dimen name="quote_gap_width">2dp</dimen>
 </resources>

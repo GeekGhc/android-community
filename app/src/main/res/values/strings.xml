@@ -11,6 +11,7 @@
     <string name="read_articles">阅读过的文章</string>
     <string name="user_advise">意见反馈</string>
     <string name="profile">个人主页</string>
+    <string name="post_write">发布帖子</string>
     <string name="me">我</string>
     <string name="edit_profile">修改资料</string>
     <string name="save">保存</string>
@@ -44,6 +45,8 @@
     <string name="action_copy">复制链接到剪贴板</string>
     <string name="action_share">分享链接</string>
 
+    <string name="post_publish">发表</string>
+
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="reset_password">重置密码</string>
@@ -51,6 +54,7 @@
 
     <string name="error_tips">糟糕！加载失败了ヽ(≧Д≦)ノ\n 可能的原因：\n1.惨不忍睹的网络环境\n 2.服务器的不定期抽风\n 3.微社区现在心情不好拒绝服务喔~</string>
 
+    <string name="post_hint">1.描述你的问题\n\n2.贴上相关的代码\n\n3.贴上报错信息</string>
 
     <!-- Strings related to Settings -->
 

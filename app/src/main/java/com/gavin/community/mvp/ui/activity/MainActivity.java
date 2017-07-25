@@ -1,22 +1,16 @@
 package com.gavin.community.mvp.ui.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -24,19 +18,14 @@ import android.widget.RelativeLayout;
 import com.gavin.community.R;
 import com.gavin.community.app.App;
 import com.gavin.community.common.BarManager;
-import com.gavin.community.common.base.BaseAppCompatActivity;
 import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.discover.fragment.DiscoverFragment;
-import com.gavin.community.home.post.fragment.PostSwipeActivity;
+import com.gavin.community.home.post.activity.PostSwipeActivity;
 import com.gavin.community.message.fragment.MessageFragment;
 import com.gavin.community.mvp.ui.fragement.HomeFragment;
 import com.gavin.community.myself.activity.LoginActivity;
 import com.gavin.community.myself.fragment.MySelfFragment;
 import com.gavin.community.utils.StatusBarUtils;
-import com.gavin.community.utils.ToastUtil;
-
-import butterknife.ButterKnife;
-import me.yokeyword.fragmentation.SupportActivity;
 
 public class MainActivity extends SimpleActivity {
 

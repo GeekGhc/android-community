@@ -1,13 +1,9 @@
 package com.gavin.community.myself.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,13 +14,11 @@ import com.gavin.community.app.http.response.UserHttpResponse;
 import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.common.entity.User;
 import com.gavin.community.di.module.HttpModule;
-import com.gavin.community.home.post.fragment.PostSwipeActivity;
 import com.gavin.community.mvp.ui.activity.MainActivity;
 import com.gavin.community.utils.ToastUtil;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
