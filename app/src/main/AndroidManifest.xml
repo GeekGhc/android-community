@@ -46,7 +46,7 @@
         <activity android:name=".myself.activity.LoginActivity" />
         <activity android:name=".myself.activity.RegisterActivity" />
         <activity android:name=".myself.activity.ResetPwdActivity" />
-        <activity android:name=".home.activity.PostWriteActivity"></activity>
+        <activity android:name=".home.post.activity.PostWriteActivity"></activity>
     </application>
 
 </manifest>

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.gavin.community.R;
-import com.gavin.community.home.activity.PostWriteActivity;
 
 public class PostSwipeActivity extends AppCompatActivity {
 
@@ -21,6 +20,8 @@ public class PostSwipeActivity extends AppCompatActivity {
     private ImageView composeReview;
     private ImageView composeMore;
     private ImageView composeClose;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

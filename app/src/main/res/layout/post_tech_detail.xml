@@ -51,13 +51,15 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <include layout="@layout/post_footer"/>
+
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nsv_scroller"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:overScrollMode="never"
         android:scrollbars="vertical"
-        android:background="@color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -83,10 +85,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-               <!-- <ImageView
+                <!-- <ImageView
                     android:id="@+id/post_user_avatar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -98,36 +100,34 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
-                    android:text="JellyBean"/>
+                    android:text="JellyBean" />
+
                 <TextView
                     android:id="@+id/post_create_at"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
-                    android:text="3个小时前"
-                    />
+                    android:text="3个小时前" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/post_body"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <br.tiagohm.markdownview.MarkdownView
+                    android:id="@+id/markdownView"
+                    app:escapeHtml="false"
+                    app:paddingStart="0dp"
+                    app:paddingEnd="0dp"
+                    android:padding="0dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="录音师。苹果从硬件到软件至少把大众听音的水准提高了两个档次。
-                    从iiPhone，iPad，笔记本，到一体机，无论是耳机还是喇叭，苹果产品能做到声音风格基本一致，而其他厂商常常会因为外观和工艺问题，
-                    优先牺牲音质，连自家产品都做不到声音统一。录音师可以把苹果设备作为另一套参考监听标准，一首歌曲接近完成时，会拿到iPhone上或者用苹果显示器的喇叭进行检查比对，如果在苹果设备上有不错表现，
-                    可以去看我写的文章：https://zhuanlan.zhihu.com/p/27909887正如其他知友所说，市面上有不少设备，连基本正确的声音都做不到，那还谈论什么音质？所以，我认为无论对于专业还是普通大众，
-                    苹果产品可能是通用设备（注意我的用词）里音质最可靠的。附上工作照。"/>
+                    android:layout_height="match_parent"/>
+
             </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
-   <include layout="@layout/post_footer"/>
 
 </android.support.design.widget.CoordinatorLayout>

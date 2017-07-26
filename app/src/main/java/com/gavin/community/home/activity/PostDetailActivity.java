@@ -20,9 +20,11 @@ import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.mvp.ui.activity.MainActivity;
 import com.gavin.community.myself.activity.LoginActivity;
 import com.gavin.community.myself.activity.ResetPwdActivity;
+import com.gavin.community.utils.MarkdownUtil;
 import com.gavin.community.utils.SystemUtil;
 import com.gavin.community.utils.ToastUtil;
 
+import br.tiagohm.markdownview.MarkdownView;
 import butterknife.BindView;
 
 public class PostDetailActivity extends SimpleActivity {
@@ -35,8 +37,8 @@ public class PostDetailActivity extends SimpleActivity {
     ImageView ivUserAvatar;*/
     @BindView(R.id.post_user_name)
     TextView tvUserName;
-    @BindView(R.id.post_body)
-    TextView tvPostBody;
+    @BindView(R.id.markdownView)
+    MarkdownView mMarkdownView;
     @BindView(R.id.detail_bar_image)
     ImageView ivBarImg;
     @BindView(R.id.post_comment_count)
@@ -75,7 +77,8 @@ public class PostDetailActivity extends SimpleActivity {
         setToolBar(toolBar, userName);
         tvUserName.setText(userName);
         tvPostTitle.setText(title);
-        tvPostBody.setText(body);
+        mMarkdownView = (new MarkdownUtil()).setCss(mMarkdownView);
+        mMarkdownView.loadMarkdown(body);
         tvCommentCount.setText(commentCount);
         if (type == Constants.TYPE_ANDROID) {
             ivBarImg.setImageResource(R.drawable.bg_android);

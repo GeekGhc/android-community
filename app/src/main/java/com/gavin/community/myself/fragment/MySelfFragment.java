@@ -28,21 +28,9 @@ import com.gavin.community.myself.favorite.activity.FavoriteActivity;
 import com.gavin.community.myself.followers.activity.FollowersActivity;
 import com.gavin.community.myself.following.activity.FollowingActivity;
 import com.gavin.community.profile.activity.ProfileActivity;
-import com.gavin.community.utils.ToastUtil;
-import com.google.common.eventbus.Subscribe;
-
-import org.reactivestreams.Subscriber;
 
 import butterknife.BindView;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+
 
 public class MySelfFragment extends SimpleFragment implements MeFragementView {
 

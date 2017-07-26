@@ -89,7 +89,6 @@ public class HomeFragment extends SimpleFragment {
         mTabLayout.getTabAt(1).setText(type[1]);
         mTabLayout.getTabAt(2).setText(type[2]);
         mTabLayout.getTabAt(3).setText(type[3]);
-
         initListener();
     }
 
