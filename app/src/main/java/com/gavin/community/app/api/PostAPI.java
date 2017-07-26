@@ -8,7 +8,11 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
+import retrofit2.http.DELETE;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -25,4 +29,12 @@ public interface PostAPI {
 
     @GET("show/{id}")
     Flowable<PostHttpResponse<PostViewBean>> showPost(@Path("id") String id);
+
+    @FormUrlEncoded
+    @POST("create")
+    Flowable<PostHttpResponse<PostItemBean>> releasePost(@Field("title") String title,@Field("tags") String tags,@Field("body") String body);
+
+    @DELETE("remove")
+    Flowable<PostHttpResponse<PostItemBean>> removePost(@Field("id") String id);
+
 }

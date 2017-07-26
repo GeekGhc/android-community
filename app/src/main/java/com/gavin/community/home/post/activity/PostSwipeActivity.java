@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.gavin.community.R;
+import com.gavin.community.utils.ToastUtil;
 
 public class PostSwipeActivity extends AppCompatActivity {
 
@@ -63,6 +64,30 @@ public class PostSwipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PostSwipeActivity.this, PostWriteActivity.class);
                 startActivity(intent);
+            }
+        });
+        composeArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show("目前正在开发中...");
+            }
+        });
+        composeLbs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show("目前正在开发中...");
+            }
+        });
+        composePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show("图片功能正在开发中...");
+            }
+        });
+        composeMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show("图片功能正在开发中...");
             }
         });
     }

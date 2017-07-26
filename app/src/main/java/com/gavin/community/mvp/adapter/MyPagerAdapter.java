@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 
 
 public class MyPagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
     private LayoutInflater inflater;
     private List<PostItemBean> mList;
     private MyPagerAdapter.OnItemClickListener onItemClickListener;

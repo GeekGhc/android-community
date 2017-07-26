@@ -13,6 +13,9 @@ public class ArticleItemBean {
     private String starCount;
     private String commentCount;
     private String favoriteCount;
+    private String createdAt;
+    private String updatedAt;
+    private String isFavorite;
 
     public String getAvatar() {
         return avatar;
@@ -45,10 +48,6 @@ public class ArticleItemBean {
     public void setIsFavorite(String isFavorite) {
         this.isFavorite = isFavorite;
     }
-
-    private String createdAt;
-    private String updatedAt;
-    private String isFavorite;
 
     public String getId() {
         return id;

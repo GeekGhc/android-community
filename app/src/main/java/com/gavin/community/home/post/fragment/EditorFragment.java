@@ -5,12 +5,10 @@ import android.widget.ImageButton;
 
 import com.gavin.community.R;
 import com.gavin.community.common.base.SimpleFragment;
+import com.gavin.community.utils.ToastUtil;
 
 import io.github.mthli.knife.KnifeText;
 
-/**
- * Created by Administrator on 2017/7/26.
- */
 
 public class EditorFragment extends SimpleFragment {
 
@@ -123,6 +121,7 @@ public class EditorFragment extends SimpleFragment {
             @Override
             public void onClick(View v) {
 //                showLinkDialog();
+                ToastUtil.show("data = "+knife.toHtml());
             }
         });
     }
