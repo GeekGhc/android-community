@@ -10,8 +10,7 @@
         android:id="@+id/cv_post_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:foreground="?attr/selectableItemBackground"
         android:transitionName="shareView"
         app:cardBackgroundColor="@color/white"
@@ -30,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginRight="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -39,7 +39,7 @@
                     android:layout_marginStart="12dp"
                     android:ellipsize="end"
                     android:lineSpacingMultiplier="1.2"
-                    android:maxLines="2"
+                    android:maxLines="1"
                     android:text="Laravel5.4新特性"
                     android:textColor="@color/colorText"
                     android:textSize="16sp" />
@@ -60,6 +60,7 @@
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"
                         android:ellipsize="end"
+                        android:maxLines="1"
                         android:text="45人喜欢"
                         android:textColor="@color/comment_reply"
                         android:textSize="12sp" />
@@ -74,6 +75,7 @@
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"
                         android:ellipsize="end"
+                        android:maxLines="1"
                         android:text="JellyBean"
                         android:textColor="@color/comment_reply"
                         android:textSize="12sp" />
@@ -88,6 +90,7 @@
                         android:layout_marginTop="14dp"
                         android:drawablePadding="6dp"
                         android:ellipsize="end"
+                        android:maxLines="1"
                         android:text="3天前"
                         android:textColor="@color/comment_reply"
                         android:textSize="12sp" />

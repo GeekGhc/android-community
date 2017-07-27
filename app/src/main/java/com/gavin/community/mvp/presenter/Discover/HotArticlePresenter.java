@@ -74,17 +74,12 @@ public class HotArticlePresenter implements HotArticleContract.Presenter {
                         s.request(Long.MAX_VALUE);
                     }
                     @Override
-                    public void onComplete() {
-                        ToastUtil.show("data = ");
-                    }
+                    public void onComplete() {}
                     @Override
-                    public void onError(Throwable e) {
-                        ToastUtil.show("error = "+e);
-                    }
+                    public void onError(Throwable e) {}
                     @Override
                     public void onNext(ArticleHttpResponse<List<ArticleItemBean>> articleHttpResponse) {
                         mList = articleHttpResponse.getData();
-                        ToastUtil.show("data = "+mList);
                         mView.showContent(mList);
                     }
                 });
