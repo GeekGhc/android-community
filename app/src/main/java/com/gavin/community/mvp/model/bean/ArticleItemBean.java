@@ -9,6 +9,7 @@ public class ArticleItemBean {
     private String title;
     private String author;
     private String avatar;
+    private String body;
     private String viewCount;
     private String starCount;
     private String commentCount;
@@ -16,6 +17,15 @@ public class ArticleItemBean {
     private String createdAt;
     private String updatedAt;
     private String isFavorite;
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
 
     public String getAvatar() {
         return avatar;

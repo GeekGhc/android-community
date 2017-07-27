@@ -63,7 +63,7 @@ public class HttpModule {
     }
 
     @Provides
-    @ArticleUrl
+    @GankUrl
     public Retrofit provideArticleRetrofit(Retrofit.Builder builder, OkHttpClient client) {
         builder = this.provideRetrofitBuilder();
         client = this.provideOkHttpBuilder().build();

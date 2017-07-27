@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gavin.community.R;
-import com.gavin.community.mvp.adapter.MyPagerAdapter;
 import com.gavin.community.mvp.model.bean.ArticleItemBean;
 
 import java.util.List;
@@ -23,19 +22,19 @@ import butterknife.ButterKnife;
  * 热门文章适配器
  */
 
-public class HotArticleAdpater  extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+public class HotArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
     private LayoutInflater inflater;
     private List<ArticleItemBean> mList;
-    private HotArticleAdpater.OnItemClickListener onItemClickListener;
+    private HotArticleAdapter.OnItemClickListener onItemClickListener;
 
-   public void HotArticleAdpater(Context mContext, List<ArticleItemBean> list){
+   public  HotArticleAdapter(Context mContext, List<ArticleItemBean> list){
        inflater = LayoutInflater.from(mContext);
        this.mList = list;
    }
 
     @Override
-    public HotArticleAdpater.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new HotArticleAdpater.MyViewHolder(inflater.inflate(R.layout.item_hot_article, parent, false));
+    public HotArticleAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new HotArticleAdapter.MyViewHolder(inflater.inflate(R.layout.item_hot_article, parent, false));
     }
 
     //渲染子元素的信息
@@ -59,6 +58,10 @@ public class HotArticleAdpater  extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     }
 
+
+    /**
+     * 创建ViewHolder
+     */
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_article_img)
         ImageView ivImg;
@@ -81,7 +84,7 @@ public class HotArticleAdpater  extends RecyclerView.Adapter<RecyclerView.ViewHo
         return mList.size();
     }
 
-    public void setOnItemClickListener(HotArticleAdpater.OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(HotArticleAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 

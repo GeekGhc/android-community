@@ -42,11 +42,12 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".myself.activity.LoginActivity" />
         <activity android:name=".myself.activity.RegisterActivity" />
         <activity android:name=".myself.activity.ResetPwdActivity" />
-        <activity android:name=".home.post.activity.PostWriteActivity"></activity>
+        <activity android:name=".home.post.activity.PostWriteActivity" />
+        <activity android:name=".discover.activity.ArticleDetailActivity"></activity>
     </application>
 
 </manifest>

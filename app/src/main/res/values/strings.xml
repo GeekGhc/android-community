@@ -56,6 +56,9 @@
 
     <string name="post_hint">1.描述你的问题\n\n2.贴上相关的代码\n\n3.贴上报错信息</string>
 
+    <string name="post_edit_title">标题: 一句话说清楚问题(6-64个字)</string>
+    <string name="post_edit_tags">标签: 如php(最多5个)</string>
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
