@@ -12,22 +12,25 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.gavin.community.R;
+import com.gavin.community.common.base.SimpleActivity;
 import com.gavin.community.mvp.ui.activity.MainActivity;
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingActivity extends SimpleActivity {
 
-    private Context mContext;
     private LinearLayout mToolBarBack;
     private LinearLayout mExitLayout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragement_setting);
-        mContext = this;
+    protected int getLayout() {
+        return R.layout.fragement_setting;
+    }
+
+    @Override
+    protected void initEventAndData() {
         prepareView();
         initListener();
     }
+
 
     //视图准备
     private void prepareView() {

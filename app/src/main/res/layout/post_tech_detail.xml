@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:padding="4dp">
 
                 <!-- <ImageView
                     android:id="@+id/post_user_avatar"
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="12dp">
+                android:padding="4dp">
 
                 <br.tiagohm.markdownview.MarkdownView
                     android:id="@+id/markdownView"
