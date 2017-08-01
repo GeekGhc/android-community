@@ -20,214 +20,229 @@
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
+                android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:background="#fff"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="姓名"
-                            android:textColor="@color/setting_black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textName"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="GeekGhc"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-                    </LinearLayout>
+                        android:layout_weight="1"
+                        android:text="个人头像"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
                 </LinearLayout>
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:background="@color/user_panel_color" />
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:background="#fff"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/work"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
+                        android:layout_weight="1"
+                        android:text="姓名"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="职位"
-                            android:textColor="@color/setting_black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textWork"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="网站开发工程师"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="GeekGhc"
+                        android:textColor="@color/common_text"
+                        android:textSize="18sp" />
                 </LinearLayout>
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:background="@color/user_panel_color" />
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
+                android:id="@+id/work"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:background="#fff"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
+                        android:layout_weight="1"
+                        android:text="职位"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="城市"
-                            android:textColor="@color/setting_black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textCity"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textWork"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="网站开发工程师"
+                        android:textColor="@color/common_text"
+                        android:textSize="18sp" />
                 </LinearLayout>
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:background="@color/user_panel_color" />
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:background="#fff"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
+                        android:layout_weight="1"
+                        android:text="城市"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="简介"
-                            android:textColor="@color/setting_black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textDesc"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textCity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/common_text"
+                        android:textSize="18sp" />
                 </LinearLayout>
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:background="@color/user_panel_color" />
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
+                android:id="@+id/desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:background="#fff"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/site"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
+                        android:layout_weight="1"
+                        android:text="简介"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="个人站点"
-                            android:textColor="@color/setting_black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textSite"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:textColor="@color/common_text"
-                            android:textSize="18sp" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/common_text"
+                        android:textSize="18sp" />
                 </LinearLayout>
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:background="@color/user_panel_color" />
+
+            <LinearLayout
+                android:id="@+id/site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="个人站点"
+                        android:textColor="@color/setting_black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textSite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/common_text"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

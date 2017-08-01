@@ -51,7 +51,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/post_footer"/>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nsv_scroller"
@@ -86,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="4dp">
+                android:padding="8dp">
 
                 <!-- <ImageView
                     android:id="@+id/post_user_avatar"
@@ -129,5 +128,7 @@
             </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/post_footer"/>
 
 </android.support.design.widget.CoordinatorLayout>
