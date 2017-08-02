@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -41,6 +44,7 @@ public abstract class SimpleActivity extends SupportActivity {
     protected void onViewCreated() {
 
     }
+
 
     @Override
     protected void onDestroy() {
